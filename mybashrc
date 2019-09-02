@@ -1,0 +1,143 @@
+test_code_path='/c4_working/test_code/automatos'
+
+test_config_path='/c4_working/test_code/Scavenge_regression'
+
+alias myperl_12="perl -I $test_code_path/Dev/lib/ -I $test_code_path/TestCases/UtilityLibraries/Dev/ -I $test_code_path/TestCases/Tests/Dev/ $test_code_path/Dev/bin/automatos.pl --configFile"
+
+function axcli()
+{
+
+   testset=`basename $1`
+   testbed=`basename $2`
+   testset_name=`find $test_config_path -name $testset`
+   testbed_name=`find $test_config_path -name $testbed`
+   perl /c4_working/axcli/Dev/bin/axCli.pl  -user chenq9 -execute -testset $testset_name -testbed $testbed_name
+}
+function axcli_show()
+{
+
+perl /c4_working/axcli/Dev/bin/axCli.pl  -user chenq9  -list -execution -id `basename $1`
+}
+
+function myperl_15()
+
+{
+
+   echo "$test_config_path/$1"
+
+
+
+   if [ "$1" == '' ]
+
+   then
+
+   echo "Usage: myperl_15 main_configFile"
+
+   return
+
+   elif [ ! -f "$test_config_path/$1" ]
+
+   then
+
+   echo "configFile '$1' not found under $test_config_path" 
+
+   return
+
+   fi
+
+  
+
+   if [ "$2" == 'stop' ] 
+
+   then
+
+   echo "stop test and remove docker $1"
+
+   docker stop $1
+
+   docker rm $1
+
+   return
+
+   fi
+
+
+
+   result=`docker ps  --no-trunc --filter name=^/"$1"$|grep -v CONTAINER`
+
+   if [ "$result" != '' ]
+
+   then
+
+   echo "$1 docker is running."
+
+   return
+
+   fi
+
+   result=`docker ps -a --no-trunc --filter name=^/"$1"$|grep -v CONTAINER`
+
+   if [ "$result" != '' ]
+
+   then
+
+   echo "$1 docker exist, start it."
+
+   docker start $1
+
+   else
+
+
+
+   docker run --name $1 -v /var/run/docker.sock:/var/run/docker.sock -v /c4shares/Public:/c4shares/Public:ro -v $test_config_path:$test_config_path -v $test_code_path:$test_code_path  automatos-run bash -c  "perl -I $test_code_path/Dev/lib/ -I $test_code_path/TestCases/UtilityLibraries/Dev/ -I $test_code_path/TestCases/Tests/Dev/ $test_code_path/Dev/bin/automatos.pl --configFile $test_config_path/`basename $1`"
+
+
+
+   echo ''
+
+   echo "remove docker $1 after test."
+
+   docker rm "$1"
+
+
+
+   fi
+
+}
+
+
+
+if [ "`cat /etc/os-release |grep sles:15`" == '' ]
+
+then
+
+alias myperl="myperl_12"
+
+else
+
+alias myperl="myperl_15"
+
+fi
+
+function dgshow()
+{
+   uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d `swarm $1 --showipinfo|awk 'NR==2{print $2}'` /stor/config/dg show
+}
+function profileshow()
+{
+   uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d `swarm $1 --showipinfo|awk 'NR==2{print $2}'` /stor/config/profile -all show
+}
+
+function portshow()
+{
+   uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d `swarm $1 --showipinfo|awk 'NR==2{print $2}'` /net/port/eth show -detail
+}
+function ifshow()
+{
+   uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d `swarm $1 --showipinfo|awk 'NR==2{print $2}'` /net/if show
+}
+function ifdelete()
+{
+   uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d `swarm $1 --showipinfo|awk 'NR==2{print $2}'` /net/if -id $2 delete
+}
+
