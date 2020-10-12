@@ -160,3 +160,8 @@ function lgtm2()
 {
     curl -u "svc_usdciauto:d6178b1947a87eed8723f80645b2a92b8c561e6a" -X POST -d '{"body":"#LGTM"}' https://eos2git.cec.lab.emc.com/api/v3/repos/PIE/unity/issues/$1/comments
 }
+function http()
+{
+    cd /c4_working/test_code/Scavenge_regression/log/SpaceMaker_Tuning
+    screen python3 -m http.server 8000 
+}
