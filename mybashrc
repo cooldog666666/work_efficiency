@@ -3,6 +3,16 @@ test_code_path='/c4_working/test_code/automatos'
 test_config_path='/c4_working/test_code/Scavenge_regression'
 temp_path='/c4_working/temp'
 alias myperl_12="perl -I $test_code_path/Dev/lib/ -I $test_code_path/TestCases/UtilityLibraries/Dev/ -I $test_code_path/TestCases/Tests/Dev/ $test_code_path/Dev/bin/automatos.pl --configFile"
+alias cd1='cd /c4_working/test_code/Scavenge_regression/'
+alias cd2='cd /c4_working/unity/'
+alias cd3='cd /c4shares/Public/chenq9/DC'
+alias s1='deliver-branch --owner unity-file --branch integration/goshawk@incoming --base feature/goshawk-bugfix'
+alias s2='deliver-branch --owner unity-file --branch feature/goshawk-bugfix --base integration/goshawk'
+alias s3='deliver-branch --owner PIE --target unity-file --branch integration/goshawk --base integration/goshawk@incoming'
+alias s4='deliver-branch --owner unity-file --branch integration/goshawk@incoming --base integration/goshawk'
+alias s5='deliver-branch --owner unity-file --branch integration/goshawk --nondisruptive'
+
+alias ssh1='/c4_working/test_code/automatos/work_efficiency/ssh1.sh'
 
 function axcli()
 {
