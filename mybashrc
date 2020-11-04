@@ -11,7 +11,7 @@ alias s2='deliver-branch --owner unity-file --branch feature/goshawk-bugfix --ba
 alias s3='deliver-branch --owner PIE --target unity-file --branch integration/goshawk --base integration/goshawk@incoming'
 alias s4='deliver-branch --owner unity-file --branch integration/goshawk@incoming --base integration/goshawk'
 alias s5='deliver-branch --owner unity-file --branch integration/goshawk --nondisruptive'
-
+alias clean_build='clean_buildenv -r -p .buildenv&&git clean -nfxd&&sudo git clean -fxd&&ccache -c'
 alias ssh1='/c4_working/test_code/automatos/work_efficiency/ssh1.sh'
 
 function axcli()
