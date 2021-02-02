@@ -148,7 +148,7 @@ function profileshow()
 
 function portshow()
 {
-   uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d `swarm $1 --showipinfo|awk 'NR==2{print $2}'` /net/port/eth show -detail
+   uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d `swarm $1 --showipinfo|awk 'NR==2{print $2}'` /net/port/eth show -detail | grep -B 12 "The port is operating normally" | grep -E "ID"
 }
 function ifshow()
 {
