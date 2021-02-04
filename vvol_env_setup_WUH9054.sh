@@ -65,7 +65,7 @@ echo "$nas_if_id" > temp/nas_if_id.txt
 uemcli_record "uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /net/nas/vmwarepe create -server $nas_id -if $nas_if_id"
 pe_id=$res1
 echo "$pe_id" > temp/pe_id.txt
-exit
+
 echo "Step4"
 echo "============================================================================="
 echo "# Please make sure there are already capability profile created like this:"
@@ -76,28 +76,30 @@ read -s -n1 -p "press any key to continue" val
 echo -e "\n"
 
 # Create Block DS
+echo "============================================================================="
 echo "Step5:Create Block DS"
-uemcli_record "uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds create -name Block_DS_Compression_And_Dedup -cp cp_4,cp_6 -size 200G,200G -type block -hosts $host_id"
+echo "============================================================================="
+uemcli_record "uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds create -name Block_DS_Compression_And_Dedup -cp cp_14,cp_16 -size 200G,200G -type block -hosts $host_id"
 block_ds_1=$res1
-export block_ds_1
-uemcli_record "uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds create -name Block_DS_Compression_Only -cp cp_5,cp_6 -size 200G,200G -type block -hosts $host_id"
+echo "$block_ds_1" > temp/block_ds_1.txt
+uemcli_record "uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds create -name Block_DS_Compression_Only -cp cp_15,cp_16 -size 200G,200G -type block -hosts $host_id"
 block_ds_2=$res1
-export block_ds_2
-uemcli_record "uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds create -name Block_DS_Compression_Off -cp cp_6 -size 200G -type block -hosts $host_id"
+echo "$block_ds_2" > temp/block_ds_2.txt
+uemcli_record "uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds create -name Block_DS_Compression_Off -cp cp_16 -size 200G -type block -hosts $host_id"
 block_ds_3=$res1
-export block_ds_3
+echo "$block_ds_3" > temp/block_ds_3.txt
 
 
 ## Create File DS
-
+echo "============================================================================="
 echo "Step6:Create File DS"
-
-uemcli_record "uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds create -name File_DS_Compression_And_Dedup -cp cp_4,cp_6 -size 200G,200G -type file -hosts $host_id"
+echo "============================================================================="
+uemcli_record "uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds create -name File_DS_Compression_And_Dedup -cp cp_14,cp_16 -size 200G,200G -type file -hosts $host_id"
 file_ds_1=$res1
-export file_ds_1
-uemcli_record "uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds create -name File_DS_Compression_Only -cp cp_5,cp_6 -size 200G,200G -type file -hosts $host_id"
+echo "$file_ds_1" > temp/file_ds_1.txt
+uemcli_record "uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds create -name File_DS_Compression_Only -cp cp_15,cp_16 -size 200G,200G -type file -hosts $host_id"
 file_ds_2=$res1
-export file_ds_2
-uemcli_record "uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds create -name File_DS_Compression_Off -cp cp_6 -size 200G -type file -hosts $host_id"
+echo "$file_ds_2" > temp/file_ds_2.txt
+uemcli_record "uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds create -name File_DS_Compression_Off -cp cp_16 -size 200G -type file -hosts $host_id"
 file_ds_3=$res1
-export file_ds_3
+echo "$file_ds_3" > temp/file_ds_3.txt

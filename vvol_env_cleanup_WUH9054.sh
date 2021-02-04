@@ -17,25 +17,33 @@ ioip_4='10.245.191.174'
 
 gateway='10.245.191.1'
 netmask='255.255.255.0'
-
-# Delete Block DS
-#echo "Step1:Delete Block DS"
-#(set -x; uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds -id $block_ds_1 delete)
-#(set -x; uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds -id $block_ds_2 delete)
-#(set -x; uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds -id $block_ds_3 delete)
+## Delete Block DS
+echo "============================================================================="
+echo "Step1:Delete Block DS"
+echo "============================================================================="
+read block_ds_1 < temp/block_ds_1.txt
+read block_ds_2 < temp/block_ds_2.txt
+read block_ds_3 < temp/block_ds_3.txt
+(set -x; uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds -id $block_ds_1 delete)
+(set -x; uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds -id $block_ds_2 delete)
+(set -x; uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds -id $block_ds_3 delete)
 
 
 ## Delete File DS
-
-#echo "Step2:Delete File DS"
-#(set -x; uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds -id $file_ds_1 delete)
-#(set -x; uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds -id $file_ds_2 delete)
-#(set -x; uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds -id $file_ds_3 delete)
-
-#echo "Step3:Delete capability profile"
-
-#read -s -n1 -p "press any key to continue" val
-#echo -e "\n"
+echo "============================================================================="
+echo "Step2:Delete File DS"
+echo "============================================================================="
+read file_ds_1 < temp/file_ds_1.txt
+read file_ds_2 < temp/file_ds_2.txt
+read file_ds_3 < temp/file_ds_3.txt
+(set -x; uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds -id $file_ds_1 delete)
+(set -x; uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds -id $file_ds_2 delete)
+(set -x; uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d $mgmt_ip /stor/prov/vmware/vvolds -id $file_ds_3 delete)
+echo "============================================================================="
+echo "Step3:Delete capability profile"
+echo "============================================================================="
+read -s -n1 -p "press any key to continue" val
+echo -e "\n"
 
 # Delete NASSERVER
 echo "============================================================================="
