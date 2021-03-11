@@ -1,0 +1,3 @@
+*2016-07-18 04:16:15,803|INFO|PID31666 - Try Accurev Login...
+*2016-07-18 04:16:15,804|DEBUG|PID31666 - [RUN] "/opt/accurev/bin/accurev login -n zhengh3 'zhw\\1988125'"
+*2016-07-18 04:16:16,484|DEBUG|PID31666 - [RUN] "/opt/accurev/bin/accurev login -n zhengh3 'zhw\\1988125'" complete (0)

@@ -1,0 +1,3 @@
+/bin/bash -c '/net/$JENKINS_SERVER/build_artifacts/Mcx_Reports/McxDslHelperFunctions.sh ChangeTargetDirectoryOwner'
+
+

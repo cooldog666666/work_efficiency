@@ -1,0 +1,60 @@
+#!/bin/bash
+
+# TODO
+# create a link named "bbmake"
+# create a link named "dartmake"
+# create a link named "bbmakeoff"
+# create a link named "dartmakeoff"
+
+# set build environment
+
+set -x
+
+export TOOLS_DIRECTORY="/disks/vidtool1/Calroot/Dart_CVS_Tools/tools";
+export CS_TOOLS=/disks/NSG_Root/CS_tools;
+
+export JAVA_TOOLS=$CS_TOOLS/java;
+
+
+export N_PARALLEL_BUILDS=$(echo `cat /proc/cpuinfo  | grep processor  | wc -l`);
+export SYSTYPE=Linux2;
+export PRODUCT=NAS;
+export GNU386=YES;
+export GCC=new;
+export PRODUCT_C_SYSMAN=YES;
+
+export DEBUG_BUILD=DEBUGON;
+unset PRODUCT_C_BLACKBIRD;
+unset PRODUCT_C_VDM_UDI;
+
+if [ -n "`echo $0 | grep bb`" ]; then
+    export PRODUCT_C_BLACKBIRD=YES;
+fi
+
+if [ -n "`echo $0 | grep off`" ]; then
+    export DEBUG_BUILD=DEBUGOFF;
+fi
+
+if [ -n "`echo $0 | grep kh`" ]; then
+    export PRODUCT_C_VDM_UDI=YES;
+fi
+
+#proot=`accurev info | grep Top | awk '{print $2}'`
+if accurev info 3>&1 1>&2 2>&3 3>&- 1>/dev/null | grep -q 'You are not in a directory associated with a workspace'
+then
+    echo "[INFO] This is a GIT workspace"
+    proot=$(git rev-parse --show-toplevel)
+else
+    echo "[INFO] This is an ACCUREV workspace"
+    accurev info
+    proot=$(accurev info | sed -nr '/^Top:/ s/^Top:\s*(.+)/\1/p')
+fi
+export PRODUCT_ROOT=$proot/sade/src/dart;
+export CALAVERAS_DIR=$PRODUCT_ROOT/Dart;
+export MAKESTARTUP=$PRODUCT_ROOT/Dart/startunix.mk;
+export CAL_CUR_DEVDIR=$PRODUCT_ROOT/Dart;
+export PATH=$proot/sade/tools:$PATH:/vidtool1/Calroot/Calaveras/tools_linux/Linux/bin:/vidtool1/Calroot/Dart_CVS_Tools/tools/bin:/vidtool1/Calroot/Dart_CVS_Tools/tools/cs;
+
+#start makeing
+(cd $CALAVERAS_DIR/server/x86_64.bin && \dmake $@)
+

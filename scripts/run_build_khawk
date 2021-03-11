@@ -1,0 +1,53 @@
+#!/bin/bash -x
+
+function die()
+{
+    printf "ERROR: %s\n" "$@" >&2
+    exit 1
+}
+
+[[ $CFG_FULL_TRACE -ne 0 ]] && set -x
+
+# Parse parameter
+declare stream=$1
+[[ $stream ]] || die "No stream given"
+[[ $# -eq 1 ]] || die "Usage error"
+
+# This activity ensures local mirror is up-to-date
+accurev rmproperty -s "$stream" "build_khawk:doesnotexist" || die "Failed to remove fake property"
+
+# Source all properties into the environment
+function source_env() {
+    declare prefix="$1"
+    declare pattern="$2"
+
+    declare prop
+    while read prop; do
+        declare varval="${prop#$stream: $prefix:}"
+        [[ $prop != $varval ]] || die "Error parsing property $prop"
+        declare var=${varval%%=*}
+        declare val=${varval#*=}
+        eval export "$var=$(printf "%q" "$val")"
+    done < <(accurev getproperty -s "$stream" -n "$prefix:$pattern")
+}
+
+source_env "build_khawk${CFG_BUILD_VARIANT:+_$CFG_BUILD_VARIANT}" "CFG_*"
+source_env "nfs_rsync" "NFS_RSYNC_*"
+
+# Quick check that at least a few required settings are present
+[[ $CFG_BASE_DIR && $CFG_OUTPUT_BASE && $CFG_WORKSPACE ]] || die "No configuration defined"
+
+# Get build script version from stream, and execute it
+declare build_script=$CFG_BUILD_SCRIPT_PATH
+if [[ $build_script ]]; then
+    printf "NOTE: using build script $build_script\\n" >&2
+else
+    build_script="$CFG_BASE_DIR"/build_khawk
+    accurev cat -v "$stream" /./sw-dev-tools/bin/build_khawk > "$build_script" || die "Cannot find build_khawk script"
+    chmod u+rx "$build_script" || die "Cannot set permissions on build script"
+fi
+if [[ $CFG_FULL_TRACE -ne 0 ]]; then
+    bash -x "$build_script" || die "Error executing build script"
+else
+    "$build_script" || die "Error executing build script"
+fi

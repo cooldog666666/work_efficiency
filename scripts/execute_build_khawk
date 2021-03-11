@@ -1,0 +1,117 @@
+#!/bin/bash -x
+
+function die()
+{
+    printf "%s\n" "FATAL ERROR" "$@" >&2
+    exit 1 
+}
+
+# Add link to component directory, so that it can be accessed from the Jenkins workspace
+function link_if_component_built()
+{
+    component=${1:-image}
+    if grep -q "^Build completed ($component)" "$CFG_OUTPUT_BASE/build-$BUILD_NUMBER/$component/"*.log 2>/dev/null; then
+        ${SUDO_UID:+sudo -u "#$SUDO_UID"} ln -sf "$CFG_OUTPUT_BASE/build-$BUILD_NUMBER/$component" || die "Failed to link to component $component"
+    fi
+    return 0
+}
+
+# Check boolean value and set variable
+function check_and_set()
+{
+    if [[ $1 == true ]]; then
+	eval "export $2=1"
+    elif [[ $1 == false ]]; then
+	eval "export $2=0"
+    fi
+    return 0
+}
+
+function main() {
+    # Make initial check of the environment
+    [[ $ACCUREV_STREAM ]] || die "ACCUREV_STREAM has not been set"
+    [[ $CFG_OUTPUT_BASE ]] || die "CFG_OUTPUT_BASE has not been set"
+    [[ $CFG_WORKSPACE_DIR ]] || die "CFG_WORKSPACE_DIR has not been set"
+    [[ $BUILD_NUMBER ]] || die "BUILD_NUMBER has not been set"
+    if [[ $CFG_STATUS_DIR ]]; then
+	status_dir=$CFG_STATUS_DIR
+    elif [[ $CFG_BASE_DIR ]]; then
+	status_dir="$CFG_BASE_DIR/status"
+    else
+	die "Neither CFG_STATUS_DIR nor CFG_BASE_DIR has been set"
+    fi
+    declare -i set_description=${CFG_SET_DESCRIPTION:-1}
+    grep -qs khawk-dev-deveco /etc/sysconfig/jenkins-slave || set_description=0
+
+    # Record location of CI, as applicable
+    declare -i set_ci_uri=${CFG_SET_CI_URI:-1}
+    [[ $set_ci_uri -ne 0 && $BUILD_URL && $JOB_NAME ]] && accurev setproperty -s "$ACCUREV_STREAM" ci.uri "${BUILD_URL%/${JOB_NAME##*/}/*}/${JOB_NAME##*/}/"
+
+    # Set a pseudo-IBID in the environment, as applicable
+    declare -i set_ibid=${CFG_SET_IBID:-1}
+    if [[ ! $IBID && $set_ibid -ne 0 && $BUILD_URL && $JOB_NAME ]]; then
+        declare host=${BUILD_URL%%.*}
+        host=${host##*/}
+        job=${JOB_NAME##*/}
+        export IBID="PSEUDO-$host-$job-$BUILD_NUMBER"
+    fi
+    [[ $IBID ]] && export CFG_IBID=$IBID # Preserve across ssh with older Jenkins setups
+
+    # Set up links in workspace, for easy access from Jenkins Web UI
+    [[ -e $status_dir ]] || mkdir -p "$status_dir" || die "Failed to create status directory"
+    ${SUDO_UID:+sudo -u "#$SUDO_UID"} ln -sf "$status_dir" || die "Failed to link to status directory"
+    ${SUDO_UID:+sudo -u "#$SUDO_UID"} ln -sf "$CFG_OUTPUT_BASE" || die "Failed to link to output base directory"
+    ${SUDO_UID:+sudo -u "#$SUDO_UID"} ln -sf "$CFG_WORKSPACE_DIR" || die "Failed to link to AccuRev workspace directory"
+    ${SUDO_UID:+sudo -u "#$SUDO_UID"} ln -sf "$CFG_OUTPUT_BASE/build-$BUILD_NUMBER" || die "Failed to link to build directory"
+
+    # Do some cleanup of the output folder, to limit disk space utilization
+    declare -i scrub_builds=${CFG_SCRUB_BUILDS:-1}
+    [[ $CFG_WORKER_ID -gt 0 ]] && scrub_builds=0
+    [[ $scrub_builds -eq 0 ]] || /c4shares/auto/devutils/bin/morpheus/scrub_builds "$CFG_OUTPUT_BASE" || die "Failed to scrub previous builds"
+
+    # Translate boolean checkboxes
+    check_and_set "$FORCE_BUILD" CFG_FORCE_BUILD_ALL
+    check_and_set "$PROMOTE_UPDATES" CFG_PROMOTE_UPDATES
+    check_and_set "$ENABLE_TRACE" CFG_ENABLE_TRACE
+    check_and_set "$OVERLAP_CHECK" CFG_OVERLAP_CHECK
+    check_and_set "$PROMOTE_UPDATES" CFG_PROMOTE_UPDATES
+    check_and_set "$FRESH_COMPONENT_WORKSPACE" CFG_FRESH_COMPONENT_WORKSPACE
+    check_and_set "$VALIDATE_BUILD_PROCESS" CFG_FRESH_COMPONENT_WORKSPACE
+    check_and_set "$VALIDATE_BUILD_PROCESS" CFG_CHECK_CLEAN
+    check_and_set "$VALIDATE_BUILD_PROCESS" CFG_CHECK_EXTERNAL
+    check_and_set "$VALIDATE_BUILD_PROCESS" CFG_CHECK_MISSING
+    check_and_set "$VALIDATE_BUILD_PROCESS" CFG_CHECK_MODIFIED
+    check_and_set "$VALIDATE_BUILD_PROCESS" CFG_PURGE_ALL
+    check_and_set "$AUTO_C4DEV_UPDATE" CFG_AUTO_C4DEV_UPDATE
+    [[ $ENABLE_TRACE == false ]] && CFG_ENABLE_TRACE=''
+
+    # Set properties based on properties or Jenkins AccuRev plug-in
+    if [[ $CFG_BUILD_TRANSACTION -le 1 ]]; then
+	if [[ $TRANSACTION_ID -gt 1 ]]; then
+	    export CFG_BUILD_TRANSACTION=$TRANSACTION_ID
+	elif [[ $ACCUREV_LAST_TRANSACTION ]]; then
+	    export CFG_BUILD_TRANSACTION=$ACCUREV_LAST_TRANSACTION
+	fi
+    fi
+    [[ $BUILD_NUMBER ]] && export CFG_BUILD_NUMBER=$BUILD_NUMBER
+
+    # Run the build
+    #/c4shares/auto/devutils/bin/morpheus/run_build_khawk "$ACCUREV_STREAM"
+    /c4site/SOBO/Public/zhengh3/scripts/run_build_khawk "$ACCUREV_STREAM"
+    declare -i status=$?
+
+    # Link to primary build outputs from Jenkins workspace
+    if [[ $status -eq 0 ]]; then
+	${SUDO_UID:+sudo -u "#$SUDO_UID"} mkdir -p output || die "Failed to create output directory"
+	cd output || die "Failed to change to output directory"
+	link_if_component_built image || die "Failed to link to image"
+	link_if_component_built upgrade || die "Failed to link to upgrade"
+    fi
+
+    [[ $set_description -eq 0 && $JOB_NAME ]] || /c4site/SOBO/jenkins-build/build_failure_analyzer/automated-description-setter.sh /mnt/ci/"$JOB_NAME"/builds/"$BUILD_NUMBER"/log "$JOB_NAME" "$BUILD_NUMBER"
+
+    exit $status
+}
+
+# Run script
+[[ $0 != $BASH_SOURCE ]] || { main "$@"; exit; }
