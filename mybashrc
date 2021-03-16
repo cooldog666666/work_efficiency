@@ -103,7 +103,7 @@ function myperl_15()
 
 
 
-   docker run --name $1 -v /var/run/docker.sock:/var/run/docker.sock -v /c4shares:/c4shares:ro -v $test_config_path:$test_config_path -v $test_code_path:$test_code_path -v $temp_path:$temp_path automatos-run bash -c  "perl -I $test_code_path/Dev/lib/ -I $test_code_path/TestCases/UtilityLibraries/Dev/ -I $test_code_path/TestCases/Tests/Dev/ $test_code_path/Dev/bin/automatos.pl --configFile $test_config_path/`basename $1`"
+   docker run --name $1 -v /var/run/docker.sock:/var/run/docker.sock -v /c4shares:/c4shares:ro -e PATH=/opt/perl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/c4shares/auto/devutils/bin:/c4shares/auto/tools/bin -v $test_config_path:$test_config_path -v $test_code_path:$test_code_path -v $temp_path:$temp_path automatos-run bash -c  "perl -I $test_code_path/Dev/lib/ -I $test_code_path/TestCases/UtilityLibraries/Dev/ -I $test_code_path/TestCases/Tests/Dev/ $test_code_path/Dev/bin/automatos.pl --configFile $test_config_path/`basename $1`"
 
 
 
