@@ -1,0 +1,225 @@
+test_code_path='/c4_working/test_code/automatos'
+
+test_config_path='/c4_working/test_code/Scavenge_regression'
+temp_path='/c4_working/temp'
+alias myperl_12="perl -I $test_code_path/Dev/lib/ -I $test_code_path/TestCases/UtilityLibraries/Dev/ -I $test_code_path/TestCases/Tests/Dev/ $test_code_path/Dev/bin/automatos.pl --configFile"
+alias cd1='cd /c4_working/test_code/Scavenge_regression/'
+alias cd2='cd /c4_working/unity/'
+alias cd3='cd /c4shares/Public/chenq9/DC'
+#alias s1='deliver-branch --owner unity-file --branch integration/goshawk@incoming --base feature/goshawk-bugfix'
+#alias s2='deliver-branch --owner unity-file --branch feature/goshawk-bugfix --base integration/goshawk'
+#alias s3='deliver-branch --owner PIE --target unity-file --branch integration/goshawk --base integration/goshawk@incoming'
+#alias s4='deliver-branch --owner unity-file --branch integration/goshawk@incoming --base integration/goshawk'
+alias s5='deliver-branch --owner unity-file --branch integration/kite --nondisruptive'
+alias clean_build='clean_buildenv -r -p .buildenv&&git clean -nfxd&&sudo git clean -fxd&&ccache -c'
+alias ssh1='/c4_working/test_code/automatos/work_efficiency/ssh1.sh'
+
+function axcli()
+{
+
+   testset=`basename $1`
+   testbed=`basename $2`
+   testset_name=`find $test_config_path -name $testset`
+   testbed_name=`find $test_config_path -name $testbed`
+   perl /c4_working/axcli/Dev/bin/axCli.pl  -user chenq9 -execute -testset $testset_name -testbed $testbed_name
+}
+function axcli_show()
+{
+
+perl /c4_working/axcli/Dev/bin/axCli.pl  -user chenq9  -list -execution -id `basename $1`
+}
+function axcli_cancel()
+{
+ perl /c4_working/axcli/Dev/bin/axCli.pl  -user chenq9  -execution -id `basename $1` -cancel
+}
+
+function myperl_15()
+
+{
+
+   echo "$test_config_path/$1"
+
+
+
+   if [ "$1" == '' ]
+
+   then
+
+   echo "Usage: myperl_15 main_configFile"
+
+   return
+
+   elif [ ! -f "$test_config_path/$1" ]
+
+   then
+
+   echo "configFile '$1' not found under $test_config_path" 
+
+   return
+
+   fi
+
+  
+
+   if [ "$2" == 'stop' ] 
+
+   then
+
+   echo "stop test and remove docker $1"
+
+   docker stop $1
+
+   docker rm $1
+
+   return
+
+   fi
+
+
+
+   result=`docker ps  --no-trunc --filter name=^/"$1"$|grep -v CONTAINER`
+
+   if [ "$result" != '' ]
+
+   then
+
+   echo "$1 docker is running."
+
+   return
+
+   fi
+
+   result=`docker ps -a --no-trunc --filter name=^/"$1"$|grep -v CONTAINER`
+
+   if [ "$result" != '' ]
+
+   then
+
+   echo "$1 docker exist, start it."
+
+   docker start $1
+
+   else
+
+
+
+   docker run --name $1 -v /var/run/docker.sock:/var/run/docker.sock -v /c4shares:/c4shares:ro -e PATH=/opt/perl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/c4shares/auto/devutils/bin:/c4shares/auto/tools/bin -v $test_config_path:$test_config_path -v $test_code_path:$test_code_path -v $temp_path:$temp_path automatos-run bash -c  "perl -I $test_code_path/Dev/lib/ -I $test_code_path/TestCases/UtilityLibraries/Dev/ -I $test_code_path/TestCases/Tests/Dev/ $test_code_path/Dev/bin/automatos.pl --configFile $test_config_path/`basename $1`"
+
+
+
+   echo ''
+
+   echo "remove docker $1 after test."
+
+   docker rm "$1"
+
+
+
+   fi
+
+}
+
+
+
+if [ "`cat /etc/os-release |grep sles:15`" == '' ]
+
+then
+
+alias myperl="myperl_12"
+
+else
+
+alias myperl="myperl_15"
+
+fi
+
+function dgshow()
+{
+   uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d `swarm $1 --showipinfo|awk 'NR==2{print $2}'` /stor/config/dg show
+}
+function profileshow()
+{
+   uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d `swarm $1 --showipinfo|awk 'NR==2{print $2}'` /stor/config/profile -all show | grep "SAS Flash RAID5 (4+1)" -B 3
+}
+function profileshow()
+{
+   uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d `swarm $1 --showipinfo|awk 'NR==2{print $2}'` /stor/config/profile -all show
+}
+
+function portshow()
+{
+   uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d `swarm $1 --showipinfo|awk 'NR==2{print $2}'` /net/port/eth show -detail | grep -B 12 "The port is operating normally" | grep -E "ID"
+}
+function ifshow()
+{
+   uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d `swarm $1 --showipinfo|awk 'NR==2{print $2}'` /net/if show
+}
+function ifdelete()
+{
+   uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d `swarm $1 --showipinfo|awk 'NR==2{print $2}'` /net/if -id $2 delete
+}
+function triagehere()
+ {
+    triage $1 --upload --path .    
+ }
+function lgtm1()
+{
+    curl -u "svc_usdciauto:d6178b1947a87eed8723f80645b2a92b8c561e6a" -X POST -d '{"body":"#LGTM"}' https://eos2git.cec.lab.emc.com/api/v3/repos/unity-file/unity/issues/$1/comments
+}
+function lgtm2()
+{
+    curl -u "svc_usdciauto:d6178b1947a87eed8723f80645b2a92b8c561e6a" -X POST -d '{"body":"#LGTM"}' https://eos2git.cec.lab.emc.com/api/v3/repos/PIE/unity/issues/$1/comments
+}
+function lgtm3()
+{
+     curl -u "chenq9:Cq8328_12" -X POST -d '{"body":"#LGTM"}' https://eos2git.cec.lab.emc.com/api/v3/repos/unity-file/unity/issues/$1/comments
+ }
+function s1()
+{
+	res=`deliver-branch --owner unity-file --branch integration/kite@incoming --base feature/kite-bugfix`
+    echo "$res"
+    res1=`echo $res|sed 's/.*#\([0-9][0-9][0-9][0-9]\).*/\1/g'`
+    echo "============================================================================="
+    echo "PR No. is $res1"
+    echo "============================================================================="
+    (set -x; curl -u "svc_usdciauto:d6178b1947a87eed8723f80645b2a92b8c561e6a" -X POST -d '{"body":"#LGTM"}' https://eos2git.cec.lab.emc.com/api/v3/repos/unity-file/unity/issues/$res1/comments)
+    (set -x; curl -u "chenq9:Cq8328_12" -X POST -d '{"body":"#LGTM"}' https://eos2git.cec.lab.emc.com/api/v3/repos/unity-file/unity/issues/$res1/comments)
+}
+function s2()
+{
+	res=`deliver-branch --owner unity-file --branch feature/kite-bugfix --base integration/kite`
+    echo "$res"
+    res1=`echo $res|sed 's/.*#\([0-9][0-9][0-9][0-9]\).*/\1/g'`
+    echo "============================================================================="
+    echo "PR No. is $res1"
+    echo "============================================================================="
+    (set -x; curl -u "svc_usdciauto:d6178b1947a87eed8723f80645b2a92b8c561e6a" -X POST -d '{"body":"#LGTM"}' https://eos2git.cec.lab.emc.com/api/v3/repos/unity-file/unity/issues/$res1/comments)
+    (set -x; curl -u "chenq9:Cq8328_12" -X POST -d '{"body":"#LGTM"}' https://eos2git.cec.lab.emc.com/api/v3/repos/unity-file/unity/issues/$res1/comments)
+}
+function s3()
+{
+	res=`deliver-branch --owner PIE --target unity-file --branch integration/kite --base integration/kite@incoming`
+    echo "$res"
+    res1=`echo $res|sed 's/.*#\([0-9][0-9][0-9][0-9]\).*/\1/g'`
+    echo "============================================================================="
+    echo "PR No. is $res1"
+    echo "============================================================================="
+    (set -x; curl -u "svc_usdciauto:d6178b1947a87eed8723f80645b2a92b8c561e6a" -X POST -d '{"body":"#LGTM"}' https://eos2git.cec.lab.emc.com/api/v3/repos/unity-file/unity/issues/$res1/comments)
+    (set -x; curl -u "chenq9:Cq8328_12" -X POST -d '{"body":"#LGTM"}' https://eos2git.cec.lab.emc.com/api/v3/repos/unity-file/unity/issues/$res1/comments)
+}
+function s4()
+{
+	res=`deliver-branch --owner unity-file --branch integration/kite@incoming --base integration/kite`
+    echo "$res"
+    res1=`echo $res|sed 's/.*#\([0-9][0-9][0-9][0-9]\).*/\1/g'`
+    echo "============================================================================="
+    echo "PR No. is $res1"
+    echo "============================================================================="
+    (set -x; curl -u "svc_usdciauto:d6178b1947a87eed8723f80645b2a92b8c561e6a" -X POST -d '{"body":"#LGTM"}' https://eos2git.cec.lab.emc.com/api/v3/repos/unity-file/unity/issues/$res1/comments)
+    (set -x; curl -u "chenq9:Cq8328_12" -X POST -d '{"body":"#LGTM"}' https://eos2git.cec.lab.emc.com/api/v3/repos/unity-file/unity/issues/$res1/comments)
+}
+function http()
+{
+    cd /c4_working/test_code/Scavenge_regression/log/
+    nohup python3 -m http.server 8000 &
+}
