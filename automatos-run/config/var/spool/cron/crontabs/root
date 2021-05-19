@@ -1,0 +1,3 @@
+* * * * * bash /root/script/job_instance_monitor_cronjob.sh >> /var/log/cron.log 2>&1
+* * * * * echo "`date` Cron service is up and running." >> /var/log/cron.log 2>&1
+
