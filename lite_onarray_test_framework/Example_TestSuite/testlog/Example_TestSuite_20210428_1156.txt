@@ -1,0 +1,277 @@
+2021-04-28 11:56:20,217 - setup_testsuite - [INFO] ##############################################################################
+2021-04-28 11:56:20,217 - setup_testsuite - [INFO] #                               Start Test Suite                             #
+2021-04-28 11:56:20,218 - setup_testsuite - [INFO] ##############################################################################
+2021-04-28 11:56:20,221 - setup_testsuite - [INFO] Collect test devices from file testbed/testbed_OB-H1651.cfg...
+2021-04-28 11:56:20,222 - setup_testsuite - [INFO] [IO_HOST] section - Get item host_ip : 10.245.95.207
+2021-04-28 11:56:20,222 - setup_testsuite - [INFO] [IO_HOST] section - Get item username : root
+2021-04-28 11:56:20,222 - setup_testsuite - [INFO] [IO_HOST] section - Get item password : Password123!
+2021-04-28 11:56:20,222 - setup_testsuite - [INFO] [IO_HOST] section - Get item operation_system : Linux
+2021-04-28 11:56:20,222 - setup_testsuite - [INFO] [IO_HOST] section - Get item vdbench_path : /opt/vdbench50407
+2021-04-28 11:56:20,224 - setup_testsuite - [INFO] [IO_HOST] section - Get item iox_path : /opt/IOX
+2021-04-28 11:56:20,224 - setup_testsuite - [INFO] [IO_HOST] section - Get item vjtree_path : /opt/vjtree
+2021-04-28 11:56:20,224 - setup_testsuite - [INFO] [UEMCLI_HOST] section - Get item host_ip : 10.244.103.86
+2021-04-28 11:56:20,224 - setup_testsuite - [INFO] [UEMCLI_HOST] section - Get item username : c4dev
+2021-04-28 11:56:20,224 - setup_testsuite - [INFO] [UEMCLI_HOST] section - Get item password : c4dev!
+2021-04-28 11:56:20,224 - setup_testsuite - [INFO] [UEMCLI_HOST] section - Get item operation_system : Linux
+2021-04-28 11:56:20,224 - setup_testsuite - [INFO] [STORAGE] section - Get item name : OB-H1651
+2021-04-28 11:56:20,225 - setup_testsuite - [INFO] [STORAGE] section - Get item spa_ip : 10.245.82.185
+2021-04-28 11:56:20,225 - setup_testsuite - [INFO] [STORAGE] section - Get item spb_ip : 10.245.82.186
+2021-04-28 11:56:20,225 - setup_testsuite - [INFO] [STORAGE] section - Get item mgmt_ip : 10.245.82.189
+2021-04-28 11:56:20,225 - setup_testsuite - [INFO] [STORAGE] section - Get item username : root
+2021-04-28 11:56:20,225 - setup_testsuite - [INFO] [STORAGE] section - Get item port_1 : spa_eth3
+2021-04-28 11:56:20,225 - setup_testsuite - [INFO] [STORAGE] section - Get item port_2 : spb_eth3
+2021-04-28 11:56:20,225 - setup_testsuite - [INFO] [STORAGE] section - Get item ioip_1 : 10.245.125.145
+2021-04-28 11:56:20,225 - setup_testsuite - [INFO] [STORAGE] section - Get item ioip_2 : 10.245.125.146
+2021-04-28 11:56:20,225 - setup_testsuite - [INFO] [STORAGE] section - Get item gateway : 10.245.125.1
+2021-04-28 11:56:20,225 - setup_testsuite - [INFO] [STORAGE] section - Get item netmask : 255.255.255.0
+2021-04-28 11:56:20,225 - setup_testsuite - [INFO] Collect test parameters from file testparam/testparam_Block.cfg...
+2021-04-28 11:56:20,225 - setup_testsuite - [INFO] Get following sections from testparam/testparam_Block.cfg:
+['TEST_SUITE_COMMON', 'POOL_1', 'HOST_1']
+2021-04-28 11:56:20,226 - setup_testsuite - [INFO] ====== Find section [TEST_SUITE_COMMON].
+2021-04-28 11:56:20,226 - setup_testsuite - [INFO] [TEST_SUITE_COMMON] section - Get option logfile : Example_TestSuite
+2021-04-28 11:56:20,226 - setup_testsuite - [INFO] Section [TEST_SUITE_COMMON] parameters:
+{'logfile': 'Example_TestSuite'}
+2021-04-28 11:56:20,226 - setup_testsuite - [INFO] ====== Find section [POOL_1].
+2021-04-28 11:56:20,226 - setup_testsuite - [INFO] [POOL_1] section - Get option name : test_pool
+2021-04-28 11:56:20,226 - setup_testsuite - [INFO] [POOL_1] section - Get option profile : tprofile_12,tprofile_12
+2021-04-28 11:56:20,226 - setup_testsuite - [INFO] [POOL_1] section - Get option dg : dg_2,dg_27
+2021-04-28 11:56:20,227 - setup_testsuite - [INFO] [POOL_1] section - Get option drive_number : 2,2
+2021-04-28 11:56:20,227 - setup_testsuite - [INFO] [POOL_1] section - Get option type : traditional
+2021-04-28 11:56:20,227 - setup_testsuite - [INFO] Section [POOL_1] parameters:
+{'name': 'test_pool', 'profile': 'tprofile_12,tprofile_12', 'dg': 'dg_2,dg_27', 'drive_number': '2,2', 'type': 'traditional'}
+2021-04-28 11:56:20,227 - setup_testsuite - [INFO] ====== Find section [HOST_1].
+2021-04-28 11:56:20,227 - setup_testsuite - [INFO] [HOST_1] section - Get option name : test_host
+2021-04-28 11:56:20,227 - setup_testsuite - [INFO] [HOST_1] section - Get option ip : 10.245.95.207
+2021-04-28 11:56:20,227 - setup_testsuite - [INFO] [HOST_1] section - Get option username : root
+2021-04-28 11:56:20,228 - setup_testsuite - [INFO] [HOST_1] section - Get option password : Password123!
+2021-04-28 11:56:20,228 - setup_testsuite - [INFO] Section [HOST_1] parameters:
+{'name': 'test_host', 'ip': '10.245.95.207', 'username': 'root', 'password': 'Password123!'}
+2021-04-28 11:56:20,228 - setup_testsuite - [INFO] ============================ Start Test Case - TC_Example_System_Pool_Lun ============================
+2021-04-28 11:56:20,228 - TC_Example_System_Pool_Lun - [INFO] ### STEP_1 ### Get the system, storage pool, and datastore.
+2021-04-28 11:56:20,228 - setup_testsuite - [INFO] Run uemcli show Pool...
+2021-04-28 11:56:24,262 - setup_testsuite - [INFO] output is:
+
+1:    ID                                                = pool_20
+      Type                                              = Traditional
+      Name                                              = test_pool
+      Description                                       = 
+      Total space                                       = 983010639872 (915.5G)
+      Current allocation                                = 0
+      Preallocated                                      = 0
+      Remaining space                                   = 983010639872 (915.5G)
+      Subscription                                      = 0
+      Flash percent                                     = 100%
+      Subscription percent                              = 0%
+      Alert threshold                                   = 70%
+      Drives                                            = 2 x 200.0G SAS Flash 2; 2 x 800.0G SAS Flash 3
+      Number of drives                                  = 4
+      RAID level                                        = 10
+      Stripe length                                     = 2
+      Rebalancing                                       = no
+      Rebalancing progress                              = 
+      Health state                                      = OK (5)
+      Health details                                    = "The component is operating normally. No action is required."
+      FAST Cache enabled                                = no
+      Protection size used                              = 0
+      Non-base size used                                = 0
+      Auto-delete state                                 = Idle
+      Auto-delete paused                                = no
+      Auto-delete pool full threshold enabled           = yes
+      Auto-delete pool full high water mark             = 95%
+      Auto-delete pool full low water mark              = 85%
+      Auto-delete snapshot space used threshold enabled = no
+      Auto-delete snapshot space used high water mark   = 25%
+      Auto-delete snapshot space used low water mark    = 20%
+      Data Reduction space saved                        = 0
+      Data Reduction Percent                            = 0%
+      Data Reduction Ratio                              = 1.0:1
+      All flash pool                                    = yes
+2021-04-28 11:56:24,262 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:56:24,262 - component - [DEBUG] Get following Pool profile:
+{'ID': 'pool_20', 'Type': 'Traditional', 'Name': 'test_pool', 'Description': '', 'Total space': '983010639872 (915.5G)', 'Current allocation': '0', 'Preallocated': '0', 'Remaining space': '983010639872 (915.5G)', 'Subscription': '0', 'Flash percent': '100%', 'Subscription percent': '0%', 'Alert threshold': '70%', 'Drives': '2 x 200.0G SAS Flash 2; 2 x 800.0G SAS Flash 3', 'Number of drives': '4', 'RAID level': '10', 'Stripe length': '2', 'Rebalancing': 'no', 'Rebalancing progress': '', 'Health state': 'OK (5)', 'Health details': '"The component is operating normally. No action is required."', 'FAST Cache enabled': 'no', 'Protection size used': '0', 'Non-base size used': '0', 'Auto-delete state': 'Idle', 'Auto-delete paused': 'no', 'Auto-delete pool full threshold enabled': 'yes', 'Auto-delete pool full high water mark': '95%', 'Auto-delete pool full low water mark': '85%', 'Auto-delete snapshot space used threshold enabled': 'no', 'Auto-delete snapshot space used high water mark': '25%', 'Auto-delete snapshot space used low water mark': '20%', 'Data Reduction space saved': '0', 'Data Reduction Percent': '0%', 'Data Reduction Ratio': '1.0:1', 'All flash pool': 'yes'}
+2021-04-28 11:56:24,263 - component - [INFO] Pool test_pool profile updated.
+2021-04-28 11:56:24,263 - TC_Example_System_Pool_Lun - [INFO] ### STEP_2 ### Create multiple Luns for testing.
+2021-04-28 11:56:24,263 - setup_testsuite - [INFO] ============================ End Of Test Case - TC_Example_System_Pool_Lun ============================
+
+
+2021-04-28 11:56:24,263 - setup_teardown_environment - [INFO] ### STEP_1 ### Arrange test parameters.
+2021-04-28 11:56:24,264 - setup_teardown_environment - [INFO] Teardown test environment...
+2021-04-28 11:56:24,264 - setup_teardown_environment - [INFO] ### STEP_2 ### Remove the iscsi interface.
+2021-04-28 11:56:24,264 - setup_teardown_environment - [INFO] ### STEP_3 ### Remove the pool.
+2021-04-28 11:56:24,264 - setup_testsuite - [INFO] Run uemcli show Host...
+2021-04-28 11:56:27,957 - setup_testsuite - [INFO] output is:
+
+1:    ID              = Host_16
+      Name            = test_host
+      Description     = 
+      Tenant          = 
+      Type            = host
+      Address         = test_host
+      Netmask         = 
+      OS type         = 
+      Ignored address = 
+      Management type = Manual
+      Accessible LUNs = 
+      Host LUN IDs    = 
+      Host group      = 
+      Health state    = OK (5)
+      Health details  = "The component is operating normally. No action is required."
+2021-04-28 11:56:27,957 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:56:27,957 - component - [DEBUG] Get following Host profile:
+{'ID': 'Host_16', 'Name': 'test_host', 'Description': '', 'Tenant': '', 'Type': 'host', 'Address': 'test_host', 'Netmask': '', 'OS type': '', 'Ignored address': '', 'Management type': 'Manual', 'Accessible LUNs': '', 'Host LUN IDs': '', 'Host group': '', 'Health state': 'OK (5)', 'Health details': '"The component is operating normally. No action is required."'}
+2021-04-28 11:56:27,957 - component - [INFO] Host test_host profile updated.
+2021-04-28 11:56:27,957 - component - [INFO] Check iscsi session.
+2021-04-28 11:56:27,957 - setup_testsuite - [INFO] Run command iscsiadm -m session -R...
+2021-04-28 11:56:30,490 - setup_testsuite - [INFO] output is:
+
+Rescanning session [sid: 516, target: iqn.1992-04.com.emc:cx.apm00182204089.a1, portal: 10.245.125.145,3260]
+Rescanning session [sid: 515, target: iqn.1992-04.com.emc:cx.apm00182204089.b1, portal: 10.245.125.146,3260]
+2021-04-28 11:56:30,490 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:56:30,491 - component - [INFO] Rescanning session target iqn.1992-04.com.emc:cx.apm00182204089.a1 ip=10.245.125.145
+2021-04-28 11:56:30,492 - component - [INFO] Rescanning session target iqn.1992-04.com.emc:cx.apm00182204089.b1 ip=10.245.125.146
+2021-04-28 11:56:30,492 - setup_testsuite - [INFO] Run command iscsiadm -m session -P 3...
+2021-04-28 11:56:33,002 - setup_testsuite - [INFO] output is:
+
+iSCSI Transport Class version 2.0-870
+version 6.2.0-873.13.el6
+Target: iqn.1992-04.com.emc:cx.apm00182204089.b1 (non-flash)
+	Current Portal: 10.245.125.146:3260,1
+	Persistent Portal: 10.245.125.146:3260,1
+		**********
+		Interface:
+		**********
+		Iface Name: default
+		Iface Transport: tcp
+		Iface Initiatorname: iqn.1994-05.com.redhat:12dc104e635d
+		Iface IPaddress: 10.245.95.207
+		Iface HWaddress: <empty>
+		Iface Netdev: <empty>
+		SID: 515
+		iSCSI Connection State: LOGGED IN
+		iSCSI Session State: LOGGED_IN
+		Internal iscsid Session State: NO CHANGE
+		*********
+		Timeouts:
+		*********
+		Recovery Timeout: 120
+		Target Reset Timeout: 30
+		LUN Reset Timeout: 30
+		Abort Timeout: 15
+		*****
+		CHAP:
+		*****
+		username: <empty>
+		password: ********
+		username_in: <empty>
+		password_in: ********
+		************************
+		Negotiated iSCSI params:
+		************************
+		HeaderDigest: CRC32C
+		DataDigest: None
+		MaxRecvDataSegmentLength: 262144
+		MaxXmitDataSegmentLength: 65536
+		FirstBurstLength: 0
+		MaxBurstLength: 262144
+		ImmediateData: No
+		InitialR2T: Yes
+		MaxOutstandingR2T: 1
+		************************
+		Attached SCSI devices:
+		************************
+		Host Number: 517	State: running
+		scsi517 Channel 00 Id 0 Lun: 0
+			Attached scsi disk sdb		State: running
+Target: iqn.1992-04.com.emc:cx.apm00182204089.a1 (non-flash)
+	Current Portal: 10.245.125.145:3260,2
+	Persistent Portal: 10.245.125.145:3260,2
+		**********
+		Interface:
+		**********
+		Iface Name: default
+		Iface Transport: tcp
+		Iface Initiatorname: iqn.1994-05.com.redhat:12dc104e635d
+		Iface IPaddress: 10.245.95.207
+		Iface HWaddress: <empty>
+		Iface Netdev: <empty>
+		SID: 516
+		iSCSI Connection State: LOGGED IN
+		iSCSI Session State: LOGGED_IN
+		Internal iscsid Session State: NO CHANGE
+		*********
+		Timeouts:
+		*********
+		Recovery Timeout: 120
+		Target Reset Timeout: 30
+		LUN Reset Timeout: 30
+		Abort Timeout: 15
+		*****
+		CHAP:
+		*****
+		username: <empty>
+		password: ********
+		username_in: <empty>
+		password_in: ********
+		************************
+		Negotiated iSCSI params:
+		************************
+		HeaderDigest: CRC32C
+		DataDigest: None
+		MaxRecvDataSegmentLength: 262144
+		MaxXmitDataSegmentLength: 65536
+		FirstBurstLength: 0
+		MaxBurstLength: 262144
+		ImmediateData: No
+		InitialR2T: Yes
+		MaxOutstandingR2T: 1
+		************************
+		Attached SCSI devices:
+		************************
+		Host Number: 518	State: running
+		scsi518 Channel 00 Id 0 Lun: 0
+			Attached scsi disk sdc		State: running
+2021-04-28 11:56:33,002 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:56:33,002 - component - [INFO] Check iscsi session for target iqn.1992-04.com.emc:cx.apm00182204089.a1 ip=10.245.125.145
+2021-04-28 11:56:33,003 - component - [INFO] Check iscsi session for target iqn.1992-04.com.emc:cx.apm00182204089.b1 ip=10.245.125.146
+2021-04-28 11:56:33,003 - component - [INFO] Logout of iscsi session.
+2021-04-28 11:56:33,003 - component - [INFO] Log out of target iqn.1992-04.com.emc:cx.apm00182204089.a1 ip=10.245.125.145
+2021-04-28 11:56:33,003 - setup_testsuite - [INFO] Run command iscsiadm -m node -u -T iqn.1992-04.com.emc:cx.apm00182204089.a1 -p 10.245.125.145:3260...
+2021-04-28 11:56:35,465 - setup_testsuite - [INFO] output is:
+
+Logging out of session [sid: 516, target: iqn.1992-04.com.emc:cx.apm00182204089.a1, portal: 10.245.125.145,3260]
+Logout of [sid: 516, target: iqn.1992-04.com.emc:cx.apm00182204089.a1, portal: 10.245.125.145,3260] successful.
+2021-04-28 11:56:35,466 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:56:35,466 - component - [INFO] Log out of target iqn.1992-04.com.emc:cx.apm00182204089.b1 ip=10.245.125.146
+2021-04-28 11:56:35,466 - setup_testsuite - [INFO] Run command iscsiadm -m node -u -T iqn.1992-04.com.emc:cx.apm00182204089.b1 -p 10.245.125.146:3260...
+2021-04-28 11:56:37,887 - setup_testsuite - [INFO] output is:
+
+Logging out of session [sid: 515, target: iqn.1992-04.com.emc:cx.apm00182204089.b1, portal: 10.245.125.146,3260]
+Logout of [sid: 515, target: iqn.1992-04.com.emc:cx.apm00182204089.b1, portal: 10.245.125.146,3260] successful.
+2021-04-28 11:56:37,887 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:56:37,888 - component - [INFO] Add target portal for storage interface.
+2021-04-28 11:56:37,888 - setup_testsuite - [INFO] Run command iscsiadm -m discoverydb -p 10.245.125.145:3260 -o delete -t st...
+2021-04-28 11:56:40,292 - setup_testsuite - [INFO] output is:
+
+
+2021-04-28 11:56:40,292 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:56:40,292 - setup_testsuite - [INFO] Run command iscsiadm -m discoverydb -p 10.245.125.146:3260 -o delete -t st...
+2021-04-28 11:56:42,687 - setup_testsuite - [INFO] output is:
+
+
+2021-04-28 11:56:42,688 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:56:42,688 - component - [INFO] Check no iscsi session exist.
+2021-04-28 11:56:42,688 - setup_testsuite - [INFO] Run command iscsiadm -m session -P 3...
+2021-04-28 11:56:45,092 - setup_testsuite - [INFO] output is:
+
+iSCSI Transport Class version 2.0-870
+version 6.2.0-873.13.el6
+2021-04-28 11:56:45,092 - setup_testsuite - [INFO] exit status is:21.
+2021-04-28 11:56:45,092 - setup_testsuite - [INFO] Run command iscsiadm -m session -P 3...
+2021-04-28 11:56:47,497 - setup_testsuite - [INFO] output is:
+
+iSCSI Transport Class version 2.0-870
+version 6.2.0-873.13.el6
+2021-04-28 11:56:47,497 - setup_testsuite - [INFO] exit status is:21.
+2021-04-28 11:56:47,497 - setup_testsuite - [INFO] ##############################################################################
+2021-04-28 11:56:47,497 - setup_testsuite - [INFO] #                               End Of Test Suite                            #
+2021-04-28 11:56:47,497 - setup_testsuite - [INFO] ##############################################################################

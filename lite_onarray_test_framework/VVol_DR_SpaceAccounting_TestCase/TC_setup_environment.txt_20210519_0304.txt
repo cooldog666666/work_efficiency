@@ -1,0 +1,101 @@
+2021-05-19 03:04:55,723 - setup_testsuite - [INFO] Collect test devices from file VVol_DR_SpaceAccounting_TestCase/testbed.cfg...
+2021-05-19 03:04:55,723 - setup_testsuite - [INFO] [Storage] section - Get item name : WU-H9054
+2021-05-19 03:04:55,723 - setup_testsuite - [INFO] [Storage] section - Get item spa_ip : 10.245.82.140
+2021-05-19 03:04:55,723 - setup_testsuite - [INFO] [Storage] section - Get item spb_ip : 10.245.82.141
+2021-05-19 03:04:55,723 - setup_testsuite - [INFO] [Storage] section - Get item mgmt_ip : 10.245.82.144
+2021-05-19 03:04:55,724 - setup_testsuite - [INFO] [Storage] section - Get item username : root
+2021-05-19 03:04:55,724 - setup_testsuite - [INFO] [Storage] section - Get item port_1 : spa_ocp_0_eth0
+2021-05-19 03:04:55,724 - setup_testsuite - [INFO] [Storage] section - Get item port_2 : spb_iom_1_eth0
+2021-05-19 03:04:55,724 - setup_testsuite - [INFO] [Storage] section - Get item port_3 : spa_iom_1_eth0
+2021-05-19 03:04:55,724 - setup_testsuite - [INFO] [Storage] section - Get item ioip_1 : 10.245.191.173
+2021-05-19 03:04:55,724 - setup_testsuite - [INFO] [Storage] section - Get item ioip_2 : 10.245.191.172
+2021-05-19 03:04:55,724 - setup_testsuite - [INFO] [Storage] section - Get item ioip_3 : 10.245.191.171
+2021-05-19 03:04:55,724 - setup_testsuite - [INFO] [Storage] section - Get item gateway : 10.245.191.1
+2021-05-19 03:04:55,724 - setup_testsuite - [INFO] [Storage] section - Get item netmask : 255.255.255.0
+2021-05-19 03:04:55,724 - setup_testsuite - [INFO] Collect test parameters from file VVol_DR_SpaceAccounting_TestCase/testparam.cfg...
+2021-05-19 03:04:55,724 - setup_testsuite - [INFO] Get following sections from VVol_DR_SpaceAccounting_TestCase/testparam.cfg:
+['TEST_SUITE_COMMON', 'POOL_1', 'NASSERVER_1', 'CP_1', 'CP_2', 'VVOL_DATASTORE_1', 'VVOL_DATASTORE_2', 'VVOL_DATASTORE_3', 'VCENTER_1', 'ESXHOST_1', 'VM']
+2021-05-19 03:04:55,725 - setup_testsuite - [INFO] ====== Find section [TEST_SUITE_COMMON].
+2021-05-19 03:04:55,725 - setup_testsuite - [INFO] [TEST_SUITE_COMMON] section - Get option logfile : TC_setup_environment.txt
+2021-05-19 03:04:55,725 - setup_testsuite - [INFO] Section [TEST_SUITE_COMMON] parameters:
+{'logfile': 'TC_setup_environment.txt'}
+2021-05-19 03:04:55,725 - setup_testsuite - [INFO] ====== Find section [POOL_1].
+2021-05-19 03:04:55,725 - setup_testsuite - [INFO] [POOL_1] section - Get option name : vvol_pool
+2021-05-19 03:04:55,725 - setup_testsuite - [INFO] [POOL_1] section - Get option profile : profile_12
+2021-05-19 03:04:55,725 - setup_testsuite - [INFO] [POOL_1] section - Get option dg : dg_27
+2021-05-19 03:04:55,725 - setup_testsuite - [INFO] [POOL_1] section - Get option drive_number : 18
+2021-05-19 03:04:55,725 - setup_testsuite - [INFO] [POOL_1] section - Get option type : traditional
+2021-05-19 03:04:55,725 - setup_testsuite - [INFO] Section [POOL_1] parameters:
+{'name': 'vvol_pool', 'profile': 'profile_12', 'dg': 'dg_27', 'drive_number': '18', 'type': 'traditional'}
+2021-05-19 03:04:55,725 - setup_testsuite - [INFO] ====== Find section [NASSERVER_1].
+2021-05-19 03:04:55,725 - setup_testsuite - [INFO] [NASSERVER_1] section - Get option name : nasserver
+2021-05-19 03:04:55,725 - setup_testsuite - [INFO] [NASSERVER_1] section - Get option pool : vvol_pool
+2021-05-19 03:04:55,725 - setup_testsuite - [INFO] [NASSERVER_1] section - Get option sp : spa
+2021-05-19 03:04:55,725 - setup_testsuite - [INFO] [NASSERVER_1] section - Get option sharing_protocol : nfs
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] Section [NASSERVER_1] parameters:
+{'name': 'nasserver', 'pool': 'vvol_pool', 'sp': 'spa', 'sharing_protocol': 'nfs'}
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] ====== Find section [CP_1].
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] [CP_1] section - Get option name : compression_off
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] [CP_1] section - Get option pool : vvol_pool
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] [CP_1] section - Get option data_reduction : no
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] [CP_1] section - Get option advanced_dedup : no
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] Section [CP_1] parameters:
+{'name': 'compression_off', 'pool': 'vvol_pool', 'data_reduction': 'no', 'advanced_dedup': 'no'}
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] ====== Find section [CP_2].
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] [CP_2] section - Get option name : compression_and_dedup
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] [CP_2] section - Get option pool : vvol_pool
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] [CP_2] section - Get option data_reduction : yes
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] [CP_2] section - Get option advanced_dedup : yes
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] Section [CP_2] parameters:
+{'name': 'compression_and_dedup', 'pool': 'vvol_pool', 'data_reduction': 'yes', 'advanced_dedup': 'yes'}
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] ====== Find section [VVOL_DATASTORE_1].
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] [VVOL_DATASTORE_1] section - Get option name : Block_DS_Compression_Off_
+2021-05-19 03:04:55,726 - setup_testsuite - [INFO] [VVOL_DATASTORE_1] section - Get option type : block
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] [VVOL_DATASTORE_1] section - Get option cp : compression_off
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] [VVOL_DATASTORE_1] section - Get option size : 500G
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] [VVOL_DATASTORE_1] section - Get option host : 10.207.65.82
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] Section [VVOL_DATASTORE_1] parameters:
+{'name': 'Block_DS_Compression_Off_', 'type': 'block', 'cp': 'compression_off', 'size': '500G', 'host': '10.207.65.82'}
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] ====== Find section [VVOL_DATASTORE_2].
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] [VVOL_DATASTORE_2] section - Get option name : Block_DS_Compression_And_Dedup_
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] [VVOL_DATASTORE_2] section - Get option type : block
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] [VVOL_DATASTORE_2] section - Get option cp : compression_off,compression_and_dedup
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] [VVOL_DATASTORE_2] section - Get option size : 500G,500G
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] [VVOL_DATASTORE_2] section - Get option host : 10.207.65.82
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] Section [VVOL_DATASTORE_2] parameters:
+{'name': 'Block_DS_Compression_And_Dedup_', 'type': 'block', 'cp': 'compression_off,compression_and_dedup', 'size': '500G,500G', 'host': '10.207.65.82'}
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] ====== Find section [VVOL_DATASTORE_3].
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] [VVOL_DATASTORE_3] section - Get option name : File_DS_Compression_And_Dedup_
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] [VVOL_DATASTORE_3] section - Get option type : file
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] [VVOL_DATASTORE_3] section - Get option cp : compression_off,compression_and_dedup
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] [VVOL_DATASTORE_3] section - Get option size : 500G,500G
+2021-05-19 03:04:55,727 - setup_testsuite - [INFO] [VVOL_DATASTORE_3] section - Get option host : 10.207.65.82
+2021-05-19 03:04:55,728 - setup_testsuite - [INFO] Section [VVOL_DATASTORE_3] parameters:
+{'name': 'File_DS_Compression_And_Dedup_', 'type': 'file', 'cp': 'compression_off,compression_and_dedup', 'size': '500G,500G', 'host': '10.207.65.82'}
+2021-05-19 03:04:55,728 - setup_testsuite - [INFO] ====== Find section [VCENTER_1].
+2021-05-19 03:04:55,728 - setup_testsuite - [INFO] [VCENTER_1] section - Get option ip : 10.207.65.83
+2021-05-19 03:04:55,728 - setup_testsuite - [INFO] [VCENTER_1] section - Get option username : administrator@vsphere.local
+2021-05-19 03:04:55,728 - setup_testsuite - [INFO] [VCENTER_1] section - Get option password : Password123!
+2021-05-19 03:04:55,728 - setup_testsuite - [INFO] Section [VCENTER_1] parameters:
+{'ip': '10.207.65.83', 'username': 'administrator@vsphere.local', 'password': 'Password123!'}
+2021-05-19 03:04:55,728 - setup_testsuite - [INFO] ====== Find section [ESXHOST_1].
+2021-05-19 03:04:55,728 - setup_testsuite - [INFO] [ESXHOST_1] section - Get option ip : 10.207.65.82
+2021-05-19 03:04:55,728 - setup_testsuite - [INFO] [ESXHOST_1] section - Get option username : root
+2021-05-19 03:04:55,728 - setup_testsuite - [INFO] [ESXHOST_1] section - Get option password : Password123!
+2021-05-19 03:04:55,728 - setup_testsuite - [INFO] Section [ESXHOST_1] parameters:
+{'ip': '10.207.65.82', 'username': 'root', 'password': 'Password123!'}
+2021-05-19 03:04:55,728 - setup_testsuite - [INFO] ====== Find section [VM].
+2021-05-19 03:04:55,728 - setup_testsuite - [INFO] [VM] section - Get option name : Block_DS_CD_WU-D0307_vm1
+2021-05-19 03:04:55,728 - setup_testsuite - [INFO] [VM] section - Get option template : block_template_vm
+2021-05-19 03:04:55,728 - setup_testsuite - [INFO] [VM] section - Get option ip : 10.207.65.181
+2021-05-19 03:04:55,729 - setup_testsuite - [INFO] Section [VM] parameters:
+{'name': 'Block_DS_CD_WU-D0307_vm1', 'template': 'block_template_vm', 'ip': '10.207.65.181'}
+2021-05-19 03:04:55,729 - setup_testsuite - [INFO] ============================ Start Test Case - TC_VVOL_DR_Block_TwoFamily_TwoCBFS_Spacemaker_Snap ============================
+2021-05-19 03:04:55,729 - TC_VVOL_DR_Block_TwoFamily_TwoCBFS_Spacemaker_Snap - [INFO] ### STEP_1 ### Get the system, storage pool, and datastore.
+2021-05-19 03:04:55,729 - setup_testsuite - [INFO] Run uemcli show Datastore...
+2021-05-19 03:04:57,123 - setup_testsuite - [INFO] output is:
+
+
+2021-05-19 03:04:57,123 - setup_testsuite - [INFO] exit status is:0.
+2021-05-19 03:04:57,123 - component - [DEBUG] Get following profile for Datastore:
+{}

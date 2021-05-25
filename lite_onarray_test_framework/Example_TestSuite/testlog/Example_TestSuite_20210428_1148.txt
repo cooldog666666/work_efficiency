@@ -1,0 +1,609 @@
+2021-04-28 11:48:55,190 - setup_testsuite - [INFO] ##############################################################################
+2021-04-28 11:48:55,190 - setup_testsuite - [INFO] #                               Start Test Suite                             #
+2021-04-28 11:48:55,190 - setup_testsuite - [INFO] ##############################################################################
+2021-04-28 11:48:55,194 - setup_testsuite - [INFO] Collect test devices from file testbed/testbed_OB-H1651.cfg...
+2021-04-28 11:48:55,194 - setup_testsuite - [INFO] [IO_HOST] section - Get item host_ip : 10.245.95.207
+2021-04-28 11:48:55,195 - setup_testsuite - [INFO] [IO_HOST] section - Get item username : root
+2021-04-28 11:48:55,195 - setup_testsuite - [INFO] [IO_HOST] section - Get item password : Password123!
+2021-04-28 11:48:55,195 - setup_testsuite - [INFO] [IO_HOST] section - Get item operation_system : Linux
+2021-04-28 11:48:55,195 - setup_testsuite - [INFO] [IO_HOST] section - Get item vdbench_path : /opt/vdbench50407
+2021-04-28 11:48:55,195 - setup_testsuite - [INFO] [IO_HOST] section - Get item iox_path : /opt/IOX
+2021-04-28 11:48:55,195 - setup_testsuite - [INFO] [IO_HOST] section - Get item vjtree_path : /opt/vjtree
+2021-04-28 11:48:55,196 - setup_testsuite - [INFO] [UEMCLI_HOST] section - Get item host_ip : 10.244.103.86
+2021-04-28 11:48:55,196 - setup_testsuite - [INFO] [UEMCLI_HOST] section - Get item username : c4dev
+2021-04-28 11:48:55,196 - setup_testsuite - [INFO] [UEMCLI_HOST] section - Get item password : c4dev!
+2021-04-28 11:48:55,196 - setup_testsuite - [INFO] [UEMCLI_HOST] section - Get item operation_system : Linux
+2021-04-28 11:48:55,196 - setup_testsuite - [INFO] [STORAGE] section - Get item name : OB-H1651
+2021-04-28 11:48:55,196 - setup_testsuite - [INFO] [STORAGE] section - Get item spa_ip : 10.245.82.185
+2021-04-28 11:48:55,196 - setup_testsuite - [INFO] [STORAGE] section - Get item spb_ip : 10.245.82.186
+2021-04-28 11:48:55,196 - setup_testsuite - [INFO] [STORAGE] section - Get item mgmt_ip : 10.245.82.189
+2021-04-28 11:48:55,196 - setup_testsuite - [INFO] [STORAGE] section - Get item username : root
+2021-04-28 11:48:55,197 - setup_testsuite - [INFO] [STORAGE] section - Get item port_1 : spa_eth3
+2021-04-28 11:48:55,197 - setup_testsuite - [INFO] [STORAGE] section - Get item port_2 : spb_eth3
+2021-04-28 11:48:55,197 - setup_testsuite - [INFO] [STORAGE] section - Get item ioip_1 : 10.245.125.145
+2021-04-28 11:48:55,197 - setup_testsuite - [INFO] [STORAGE] section - Get item ioip_2 : 10.245.125.146
+2021-04-28 11:48:55,197 - setup_testsuite - [INFO] [STORAGE] section - Get item gateway : 10.245.125.1
+2021-04-28 11:48:55,197 - setup_testsuite - [INFO] [STORAGE] section - Get item netmask : 255.255.255.0
+2021-04-28 11:48:55,197 - setup_testsuite - [INFO] Collect test parameters from file testparam/testparam_Block.cfg...
+2021-04-28 11:48:55,198 - setup_testsuite - [INFO] Get following sections from testparam/testparam_Block.cfg:
+['TEST_SUITE_COMMON', 'POOL_1', 'HOST_1']
+2021-04-28 11:48:55,198 - setup_testsuite - [INFO] ====== Find section [TEST_SUITE_COMMON].
+2021-04-28 11:48:55,198 - setup_testsuite - [INFO] [TEST_SUITE_COMMON] section - Get option logfile : Example_TestSuite
+2021-04-28 11:48:55,198 - setup_testsuite - [INFO] Section [TEST_SUITE_COMMON] parameters:
+{'logfile': 'Example_TestSuite'}
+2021-04-28 11:48:55,198 - setup_testsuite - [INFO] ====== Find section [POOL_1].
+2021-04-28 11:48:55,199 - setup_testsuite - [INFO] [POOL_1] section - Get option name : test_pool
+2021-04-28 11:48:55,199 - setup_testsuite - [INFO] [POOL_1] section - Get option profile : tprofile_12,tprofile_12
+2021-04-28 11:48:55,199 - setup_testsuite - [INFO] [POOL_1] section - Get option dg : dg_2,dg_27
+2021-04-28 11:48:55,199 - setup_testsuite - [INFO] [POOL_1] section - Get option drive_number : 2,2
+2021-04-28 11:48:55,199 - setup_testsuite - [INFO] [POOL_1] section - Get option type : traditional
+2021-04-28 11:48:55,199 - setup_testsuite - [INFO] Section [POOL_1] parameters:
+{'name': 'test_pool', 'profile': 'tprofile_12,tprofile_12', 'dg': 'dg_2,dg_27', 'drive_number': '2,2', 'type': 'traditional'}
+2021-04-28 11:48:55,199 - setup_testsuite - [INFO] ====== Find section [HOST_1].
+2021-04-28 11:48:55,199 - setup_testsuite - [INFO] [HOST_1] section - Get option name : test_host
+2021-04-28 11:48:55,200 - setup_testsuite - [INFO] [HOST_1] section - Get option ip : 10.245.95.207
+2021-04-28 11:48:55,200 - setup_testsuite - [INFO] [HOST_1] section - Get option username : root
+2021-04-28 11:48:55,200 - setup_testsuite - [INFO] [HOST_1] section - Get option password : Password123!
+2021-04-28 11:48:55,200 - setup_testsuite - [INFO] Section [HOST_1] parameters:
+{'name': 'test_host', 'ip': '10.245.95.207', 'username': 'root', 'password': 'Password123!'}
+2021-04-28 11:48:55,200 - setup_teardown_environment - [INFO] Setup test environment...
+2021-04-28 11:48:55,200 - setup_teardown_environment - [INFO] ### STEP_1 ### Arrange test parameters.
+2021-04-28 11:48:55,201 - setup_teardown_environment - [INFO] ### STEP_2 ### Create a storage pool.
+2021-04-28 11:48:55,201 - test_actions - [DEBUG] Show profile...
+2021-04-28 11:48:59,209 - test_actions - [DEBUG] output is:
+
+"ID","Type","Description","Drive type","RAID level","Maximum capacity","Stripe length","Disk group","Maximum drives to configure","Maximum capacity to configure"
+"profile_1","Dynamic","SAS Flash RAID5 (4+1)","SAS Flash","5","12209523366912 (11.1T)","5","","",""
+"profile_2","Dynamic","SAS Flash RAID5 (8+1)","SAS Flash","5","12209523366912 (11.1T)","9","","",""
+"profile_3","Dynamic","SAS Flash RAID5 (12+1)","SAS Flash","5","12209523366912 (11.1T)","13","","",""
+"profile_4","Dynamic","SAS Flash RAID5","SAS Flash","5","12209523366912 (11.1T)","Maximum capacity","","",""
+"profile_10","Dynamic","SAS Flash RAID6 (14+2)","SAS Flash","6","12209523366912 (11.1T)","16","","",""
+"profile_11","Dynamic","SAS Flash RAID6","SAS Flash","6","12209523366912 (11.1T)","Maximum capacity","","",""
+"profile_5","Dynamic","SAS Flash RAID6 (4+2)","SAS Flash","6","12209523366912 (11.1T)","6","","",""
+"profile_6","Dynamic","SAS Flash RAID6 (6+2)","SAS Flash","6","12209523366912 (11.1T)","8","","",""
+"profile_7","Dynamic","SAS Flash RAID6 (8+2)","SAS Flash","6","12209523366912 (11.1T)","10","","",""
+"profile_8","Dynamic","SAS Flash RAID6 (10+2)","SAS Flash","6","12209523366912 (11.1T)","12","","",""
+"profile_9","Dynamic","SAS Flash RAID6 (12+2)","SAS Flash","6","12209523366912 (11.1T)","14","","",""
+"profile_12","Dynamic","SAS Flash RAID10 (1+1)","SAS Flash","10","12209523366912 (11.1T)","2","","",""
+"profile_13","Dynamic","SAS Flash RAID10 (2+2)","SAS Flash","10","12209523366912 (11.1T)","4","","",""
+"profile_14","Dynamic","SAS Flash RAID10 (3+3)","SAS Flash","10","12209523366912 (11.1T)","6","","",""
+"profile_15","Dynamic","SAS Flash RAID10 (4+4)","SAS Flash","10","12209523366912 (11.1T)","8","","",""
+"profile_16","Dynamic","SAS Flash RAID10","SAS Flash","10","12209523366912 (11.1T)","Maximum capacity","","",""
+"profile_19","Dynamic","SAS RAID5 (4+1)","SAS","5","5318050848768 (4.8T)","5","","",""
+"profile_20","Dynamic","SAS RAID5 (8+1)","SAS","5","5318050848768 (4.8T)","9","","",""
+"profile_21","Dynamic","SAS RAID5 (12+1)","SAS","5","5318050848768 (4.8T)","13","","",""
+"profile_22","Dynamic","SAS RAID5","SAS","5","5318050848768 (4.8T)","Maximum capacity","","",""
+"profile_23","Dynamic","SAS RAID6 (4+2)","SAS","6","5318050848768 (4.8T)","6","","",""
+"profile_24","Dynamic","SAS RAID6 (6+2)","SAS","6","5318050848768 (4.8T)","8","","",""
+"profile_25","Dynamic","SAS RAID6 (8+2)","SAS","6","5318050848768 (4.8T)","10","","",""
+"profile_26","Dynamic","SAS RAID6 (10+2)","SAS","6","5318050848768 (4.8T)","12","","",""
+"profile_27","Dynamic","SAS RAID6 (12+2)","SAS","6","5318050848768 (4.8T)","14","","",""
+"profile_28","Dynamic","SAS RAID6 (14+2)","SAS","6","5318050848768 (4.8T)","16","","",""
+"profile_29","Dynamic","SAS RAID6","SAS","6","5318050848768 (4.8T)","Maximum capacity","","",""
+"profile_30","Dynamic","SAS RAID10 (1+1)","SAS","10","5318050848768 (4.8T)","2","","",""
+"profile_31","Dynamic","SAS RAID10 (2+2)","SAS","10","5318050848768 (4.8T)","4","","",""
+"profile_32","Dynamic","SAS RAID10 (3+3)","SAS","10","5318050848768 (4.8T)","6","","",""
+"profile_33","Dynamic","SAS RAID10 (4+4)","SAS","10","5318050848768 (4.8T)","8","","",""
+"profile_34","Dynamic","SAS RAID10","SAS","10","5318050848768 (4.8T)","Maximum capacity","","",""
+"profile_36","Dynamic","NL-SAS RAID5 (4+1)","NL-SAS","5","88632740290560 (80.6T)","5","","",""
+"profile_37","Dynamic","NL-SAS RAID5 (8+1)","NL-SAS","5","88632740290560 (80.6T)","9","","",""
+"profile_38","Dynamic","NL-SAS RAID5 (12+1)","NL-SAS","5","88632740290560 (80.6T)","13","","",""
+"profile_39","Dynamic","NL-SAS RAID5","NL-SAS","5","88632740290560 (80.6T)","Maximum capacity","","",""
+"profile_40","Dynamic","NL-SAS RAID6 (4+2)","NL-SAS","6","88632740290560 (80.6T)","6","","",""
+"profile_41","Dynamic","NL-SAS RAID6 (6+2)","NL-SAS","6","88632740290560 (80.6T)","8","","",""
+"profile_42","Dynamic","NL-SAS RAID6 (8+2)","NL-SAS","6","88632740290560 (80.6T)","10","","",""
+"profile_43","Dynamic","NL-SAS RAID6 (10+2)","NL-SAS","6","88632740290560 (80.6T)","12","","",""
+"profile_44","Dynamic","NL-SAS RAID6 (12+2)","NL-SAS","6","88632740290560 (80.6T)","14","","",""
+"profile_45","Dynamic","NL-SAS RAID6 (14+2)","NL-SAS","6","88632740290560 (80.6T)","16","","",""
+"profile_46","Dynamic","NL-SAS RAID6","NL-SAS","6","88632740290560 (80.6T)","Maximum capacity","","",""
+"profile_47","Dynamic","NL-SAS RAID10 (1+1)","NL-SAS","10","88632740290560 (80.6T)","2","","",""
+"profile_48","Dynamic","NL-SAS RAID10 (2+2)","NL-SAS","10","88632740290560 (80.6T)","4","","",""
+"profile_49","Dynamic","NL-SAS RAID10 (3+3)","NL-SAS","10","88632740290560 (80.6T)","6","","",""
+"profile_50","Dynamic","NL-SAS RAID10 (4+4)","NL-SAS","10","88632740290560 (80.6T)","8","","",""
+"profile_51","Dynamic","NL-SAS RAID10","NL-SAS","10","88632740290560 (80.6T)","Maximum capacity","","",""
+"tprofile_1","Traditional","SAS Flash RAID5 (4+1)","SAS Flash","5","10831013020160 (9.8T)","5","","",""
+"tprofile_2","Traditional","SAS Flash RAID5 (8+1)","SAS Flash","5","10831013020160 (9.8T)","9","","",""
+"tprofile_3","Traditional","SAS Flash RAID5 (12+1)","SAS Flash","5","10831013020160 (9.8T)","13","","",""
+"tprofile_4","Traditional","SAS Flash RAID5","SAS Flash","5","10831013020160 (9.8T)","Maximum capacity","","",""
+"tprofile_10","Traditional","SAS Flash RAID6 (14+2)","SAS Flash","6","10831013020160 (9.8T)","16","","",""
+"tprofile_11","Traditional","SAS Flash RAID6","SAS Flash","6","10831013020160 (9.8T)","Maximum capacity","","",""
+"tprofile_5","Traditional","SAS Flash RAID6 (4+2)","SAS Flash","6","10831013020160 (9.8T)","6","","",""
+"tprofile_6","Traditional","SAS Flash RAID6 (6+2)","SAS Flash","6","10831013020160 (9.8T)","8","","",""
+"tprofile_7","Traditional","SAS Flash RAID6 (8+2)","SAS Flash","6","10831013020160 (9.8T)","10","","",""
+"tprofile_8","Traditional","SAS Flash RAID6 (10+2)","SAS Flash","6","10831013020160 (9.8T)","12","","",""
+"tprofile_9","Traditional","SAS Flash RAID6 (12+2)","SAS Flash","6","10831013020160 (9.8T)","14","","",""
+"tprofile_12","Traditional","SAS Flash RAID10 (1+1)","SAS Flash","10","10831013020160 (9.8T)","2","","",""
+"tprofile_13","Traditional","SAS Flash RAID10 (2+2)","SAS Flash","10","10831013020160 (9.8T)","4","","",""
+"tprofile_14","Traditional","SAS Flash RAID10 (3+3)","SAS Flash","10","10831013020160 (9.8T)","6","","",""
+"tprofile_15","Traditional","SAS Flash RAID10 (4+4)","SAS Flash","10","10831013020160 (9.8T)","8","","",""
+"tprofile_16","Traditional","SAS Flash RAID10","SAS Flash","10","10831013020160 (9.8T)","Maximum capacity","","",""
+"tprofile_19","Traditional","SAS RAID5 (4+1)","SAS","5","6499839926272 (5.9T)","5","","",""
+"tprofile_20","Traditional","SAS RAID5 (8+1)","SAS","5","6499839926272 (5.9T)","9","","",""
+"tprofile_21","Traditional","SAS RAID5 (12+1)","SAS","5","6499839926272 (5.9T)","13","","",""
+"tprofile_22","Traditional","SAS RAID5","SAS","5","6499839926272 (5.9T)","Maximum capacity","","",""
+"tprofile_25","Traditional","SAS RAID6 (8+2)","SAS","6","6499839926272 (5.9T)","10","","",""
+"tprofile_26","Traditional","SAS RAID6 (10+2)","SAS","6","6499839926272 (5.9T)","12","","",""
+"tprofile_27","Traditional","SAS RAID6 (12+2)","SAS","6","6499839926272 (5.9T)","14","","",""
+"tprofile_28","Traditional","SAS RAID6 (14+2)","SAS","6","6499839926272 (5.9T)","16","","",""
+"tprofile_29","Traditional","SAS RAID6","SAS","6","6499839926272 (5.9T)","Maximum capacity","","",""
+"tprofile_23","Traditional","SAS RAID6 (4+2)","SAS","6","6499839926272 (5.9T)","6","","",""
+"tprofile_24","Traditional","SAS RAID6 (6+2)","SAS","6","6499839926272 (5.9T)","8","","",""
+"tprofile_30","Traditional","SAS RAID10 (1+1)","SAS","10","6499839926272 (5.9T)","2","","",""
+"tprofile_31","Traditional","SAS RAID10 (2+2)","SAS","10","6499839926272 (5.9T)","4","","",""
+"tprofile_32","Traditional","SAS RAID10 (3+3)","SAS","10","6499839926272 (5.9T)","6","","",""
+"tprofile_33","Traditional","SAS RAID10 (4+4)","SAS","10","6499839926272 (5.9T)","8","","",""
+"tprofile_34","Traditional","SAS RAID10","SAS","10","6499839926272 (5.9T)","Maximum capacity","","",""
+"tprofile_36","Traditional","NL-SAS RAID5 (4+1)","NL-SAS","5","82723890937856 (75.2T)","5","","",""
+"tprofile_37","Traditional","NL-SAS RAID5 (8+1)","NL-SAS","5","82723890937856 (75.2T)","9","","",""
+"tprofile_38","Traditional","NL-SAS RAID5 (12+1)","NL-SAS","5","82723890937856 (75.2T)","13","","",""
+"tprofile_39","Traditional","NL-SAS RAID5","NL-SAS","5","82723890937856 (75.2T)","Maximum capacity","","",""
+"tprofile_40","Traditional","NL-SAS RAID6 (4+2)","NL-SAS","6","82723890937856 (75.2T)","6","","",""
+"tprofile_41","Traditional","NL-SAS RAID6 (6+2)","NL-SAS","6","82723890937856 (75.2T)","8","","",""
+"tprofile_42","Traditional","NL-SAS RAID6 (8+2)","NL-SAS","6","82723890937856 (75.2T)","10","","",""
+"tprofile_43","Traditional","NL-SAS RAID6 (10+2)","NL-SAS","6","82723890937856 (75.2T)","12","","",""
+"tprofile_44","Traditional","NL-SAS RAID6 (12+2)","NL-SAS","6","82723890937856 (75.2T)","14","","",""
+"tprofile_45","Traditional","NL-SAS RAID6 (14+2)","NL-SAS","6","82723890937856 (75.2T)","16","","",""
+"tprofile_46","Traditional","NL-SAS RAID6","NL-SAS","6","82723890937856 (75.2T)","Maximum capacity","","",""
+"tprofile_47","Traditional","NL-SAS RAID10 (1+1)","NL-SAS","10","82723890937856 (75.2T)","2","","",""
+"tprofile_48","Traditional","NL-SAS RAID10 (2+2)","NL-SAS","10","82723890937856 (75.2T)","4","","",""
+"tprofile_49","Traditional","NL-SAS RAID10 (3+3)","NL-SAS","10","82723890937856 (75.2T)","6","","",""
+"tprofile_50","Traditional","NL-SAS RAID10 (4+4)","NL-SAS","10","82723890937856 (75.2T)","8","","",""
+"tprofile_51","Traditional","NL-SAS RAID10","NL-SAS","10","82723890937856 (75.2T)","Maximum capacity","","",""
+2021-04-28 11:48:59,209 - test_actions - [DEBUG] Show dg...
+2021-04-28 11:49:02,698 - test_actions - [DEBUG] output is:
+
+"ID","Drive type","FAST Cache","Drive size","Vendor size","Rotational speed","Number of drives","Unconfigured drives","Capacity","Recommended number of spares","Drives past EOL","Drives approaching EOL"
+"dg_2","SAS Flash 2","yes","196971960832 (183.4G)","200.0G","0 rpm","6","6","1181831764992 (1.0T)","0","0","0 (0-30 days), 0 (0-60 days), 0 (0-90 days), 0 (0-180 days)"
+"dg_3","SAS Flash 2","yes","393846128640 (366.7G)","400.0G","0 rpm","10","10","3938461286400 (3.5T)","0","0","0 (0-30 days), 0 (0-60 days), 0 (0-90 days), 0 (0-180 days)"
+"dg_15","SAS","no","590894538752 (550.3G)","600.0G","15000 rpm","5","1","2954472693760 (2.6T)","0","",""
+"dg_16","SAS","no","590894538752 (550.3G)","600.0G","10000 rpm","8","8","4727156310016 (4.2T)","0","",""
+"dg_23","NL-SAS","no","5908849352704 (5.3T)","6.0T","7200 rpm","15","15","88632740290560 (80.6T)","0","",""
+"dg_27","SAS Flash 3","no","787692257280 (733.5G)","800.0G","0 rpm","9","9","7089230315520 (6.4T)","0","0","0 (0-30 days), 0 (0-60 days), 0 (0-90 days), 0 (0-180 days)"
+2021-04-28 11:49:02,699 - test_actions - [INFO] Create a pool with name: test_pool, profile: tprofile_12,tprofile_12, drive_number: 2,2, dg: dg_2,dg_27, pool_type: traditional
+2021-04-28 11:50:21,053 - test_actions - [INFO] output is:
+
+ID = pool_20
+Operation completed successfully.
+2021-04-28 11:50:21,053 - test_actions - [INFO] exit status is:0.
+2021-04-28 11:50:21,054 - setup_testsuite - [INFO] Run uemcli show Pool...
+2021-04-28 11:50:24,485 - setup_testsuite - [INFO] output is:
+
+1:    ID                                                = pool_20
+      Type                                              = Traditional
+      Name                                              = test_pool
+      Description                                       = 
+      Total space                                       = 983010639872 (915.5G)
+      Current allocation                                = 0
+      Preallocated                                      = 0
+      Remaining space                                   = 983010639872 (915.5G)
+      Subscription                                      = 0
+      Flash percent                                     = 100%
+      Subscription percent                              = 0%
+      Alert threshold                                   = 70%
+      Drives                                            = 2 x 200.0G SAS Flash 2; 2 x 800.0G SAS Flash 3
+      Number of drives                                  = 4
+      RAID level                                        = 10
+      Stripe length                                     = 2
+      Rebalancing                                       = no
+      Rebalancing progress                              = 
+      Health state                                      = OK (5)
+      Health details                                    = "The component is operating normally. No action is required."
+      FAST Cache enabled                                = no
+      Protection size used                              = 0
+      Non-base size used                                = 0
+      Auto-delete state                                 = Idle
+      Auto-delete paused                                = no
+      Auto-delete pool full threshold enabled           = yes
+      Auto-delete pool full high water mark             = 95%
+      Auto-delete pool full low water mark              = 85%
+      Auto-delete snapshot space used threshold enabled = no
+      Auto-delete snapshot space used high water mark   = 25%
+      Auto-delete snapshot space used low water mark    = 20%
+      Data Reduction space saved                        = 0
+      Data Reduction Percent                            = 0%
+      Data Reduction Ratio                              = 1.0:1
+      All flash pool                                    = yes
+2021-04-28 11:50:24,485 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:50:24,485 - component - [DEBUG] Get following Pool profile:
+{'ID': 'pool_20', 'Type': 'Traditional', 'Name': 'test_pool', 'Description': '', 'Total space': '983010639872 (915.5G)', 'Current allocation': '0', 'Preallocated': '0', 'Remaining space': '983010639872 (915.5G)', 'Subscription': '0', 'Flash percent': '100%', 'Subscription percent': '0%', 'Alert threshold': '70%', 'Drives': '2 x 200.0G SAS Flash 2; 2 x 800.0G SAS Flash 3', 'Number of drives': '4', 'RAID level': '10', 'Stripe length': '2', 'Rebalancing': 'no', 'Rebalancing progress': '', 'Health state': 'OK (5)', 'Health details': '"The component is operating normally. No action is required."', 'FAST Cache enabled': 'no', 'Protection size used': '0', 'Non-base size used': '0', 'Auto-delete state': 'Idle', 'Auto-delete paused': 'no', 'Auto-delete pool full threshold enabled': 'yes', 'Auto-delete pool full high water mark': '95%', 'Auto-delete pool full low water mark': '85%', 'Auto-delete snapshot space used threshold enabled': 'no', 'Auto-delete snapshot space used high water mark': '25%', 'Auto-delete snapshot space used low water mark': '20%', 'Data Reduction space saved': '0', 'Data Reduction Percent': '0%', 'Data Reduction Ratio': '1.0:1', 'All flash pool': 'yes'}
+2021-04-28 11:50:24,486 - component - [INFO] Pool test_pool profile updated.
+2021-04-28 11:50:24,486 - setup_teardown_environment - [INFO] ### STEP_3 ### Show port and IO ip address configured in testbed.
+2021-04-28 11:50:24,486 - setup_teardown_environment - [INFO] storage available port: ['spa_eth3', 'spb_eth3']
+2021-04-28 11:50:24,487 - setup_teardown_environment - [INFO] storage available io ip: ['10.245.125.145', '10.245.125.146']
+2021-04-28 11:50:24,487 - setup_teardown_environment - [INFO] ### STEP_4 ### Create iscsi interfaces.
+2021-04-28 11:50:24,487 - test_actions - [INFO] Create an iscsi interface with port_id: spb_eth3, io_ip: 10.245.125.146, netmask: 255.255.255.0, gateway: 10.245.125.1
+2021-04-28 11:50:31,317 - test_actions - [INFO] output is:
+
+ID = if_33
+Operation completed successfully.
+2021-04-28 11:50:31,318 - test_actions - [INFO] exit status is:0.
+2021-04-28 11:50:31,318 - test_actions - [INFO] Create an iscsi interface with port_id: spa_eth3, io_ip: 10.245.125.145, netmask: 255.255.255.0, gateway: 10.245.125.1
+2021-04-28 11:50:38,220 - test_actions - [INFO] output is:
+
+ID = if_34
+Operation completed successfully.
+2021-04-28 11:50:38,221 - test_actions - [INFO] exit status is:0.
+2021-04-28 11:50:38,221 - setup_teardown_environment - [INFO] ### STEP_5 ### Create host.
+2021-04-28 11:50:38,221 - test_actions - [INFO] Add a host with parameter name: test_host, ip: test_host, host_type: host
+2021-04-28 11:50:42,357 - test_actions - [INFO] output is:
+
+ID = Host_16
+Operation completed successfully.
+2021-04-28 11:50:42,358 - test_actions - [INFO] exit status is:0.
+2021-04-28 11:50:42,358 - setup_testsuite - [INFO] Run uemcli show Host...
+2021-04-28 11:50:45,743 - setup_testsuite - [INFO] output is:
+
+1:    ID              = Host_16
+      Name            = test_host
+      Description     = 
+      Tenant          = 
+      Type            = host
+      Address         = test_host
+      Netmask         = 
+      OS type         = 
+      Ignored address = 
+      Management type = Manual
+      Accessible LUNs = 
+      Host LUN IDs    = 
+      Host group      = 
+      Health state    = OK (5)
+      Health details  = "The component is operating normally. No action is required."
+2021-04-28 11:50:45,743 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:50:45,743 - component - [DEBUG] Get following Host profile:
+{'ID': 'Host_16', 'Name': 'test_host', 'Description': '', 'Tenant': '', 'Type': 'host', 'Address': 'test_host', 'Netmask': '', 'OS type': '', 'Ignored address': '', 'Management type': 'Manual', 'Accessible LUNs': '', 'Host LUN IDs': '', 'Host group': '', 'Health state': 'OK (5)', 'Health details': '"The component is operating normally. No action is required."'}
+2021-04-28 11:50:45,743 - component - [INFO] Host test_host profile updated.
+2021-04-28 11:50:45,743 - setup_testsuite - [INFO] Run command cat /etc/iscsi/initiatorname.iscsi...
+2021-04-28 11:50:48,155 - setup_testsuite - [INFO] output is:
+
+InitiatorName=iqn.1994-05.com.redhat:12dc104e635d
+2021-04-28 11:50:48,155 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:50:48,156 - component - [INFO] IQN for Host-test_host is iqn.1994-05.com.redhat:12dc104e635d.
+2021-04-28 11:50:48,156 - setup_teardown_environment - [INFO] ### STEP_6 ### Create host initiator.
+2021-04-28 11:50:48,156 - test_actions - [INFO] Create host initiator with parameter host_id: Host_16, iqn: iqn.1994-05.com.redhat:12dc104e635d, initiator_type: iscsi
+2021-04-28 11:50:52,074 - test_actions - [INFO] output is:
+
+ID = HostInitiator_15
+Operation completed successfully.
+2021-04-28 11:50:52,074 - test_actions - [INFO] exit status is:0.
+2021-04-28 11:50:52,074 - setup_teardown_environment - [INFO] ### STEP_7 ### Establish iscsi connection.
+2021-04-28 11:50:52,074 - component - [INFO] Check iscsi env is clean.
+2021-04-28 11:50:52,075 - setup_testsuite - [INFO] Run command iscsiadm -m discoverydb...
+2021-04-28 11:50:54,480 - setup_testsuite - [INFO] output is:
+
+
+2021-04-28 11:50:54,480 - setup_testsuite - [INFO] exit status is:21.
+2021-04-28 11:50:54,480 - setup_testsuite - [INFO] Run command iscsiadm -m session -R...
+2021-04-28 11:50:56,882 - setup_testsuite - [INFO] output is:
+
+
+2021-04-28 11:50:56,882 - setup_testsuite - [INFO] exit status is:21.
+2021-04-28 11:50:56,882 - component - [INFO] Add target portal for storage interface.
+2021-04-28 11:50:56,883 - setup_testsuite - [INFO] Run command iscsiadm -m discoverydb -p 10.245.125.146:3260 -t st -o new...
+2021-04-28 11:50:59,312 - setup_testsuite - [INFO] output is:
+
+New discovery record for [10.245.125.146,3260] added.
+2021-04-28 11:50:59,313 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:50:59,313 - setup_testsuite - [INFO] Run command iscsiadm -m discoverydb -p 10.245.125.146:3260 -t st --discover...
+2021-04-28 11:51:01,723 - setup_testsuite - [INFO] output is:
+
+10.245.125.146:3260,1 iqn.1992-04.com.emc:cx.apm00182204089.b1
+10.245.125.145:3260,2 iqn.1992-04.com.emc:cx.apm00182204089.a1
+2021-04-28 11:51:01,724 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:51:01,724 - component - [INFO] Get storage interface 10.245.125.146 iqn: iqn.1992-04.com.emc:cx.apm00182204089.b1.
+2021-04-28 11:51:01,724 - setup_testsuite - [INFO] Run command iscsiadm -m discoverydb -p 10.245.125.145:3260 -t st -o new...
+2021-04-28 11:51:04,128 - setup_testsuite - [INFO] output is:
+
+New discovery record for [10.245.125.145,3260] added.
+2021-04-28 11:51:04,128 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:51:04,128 - setup_testsuite - [INFO] Run command iscsiadm -m discoverydb -p 10.245.125.145:3260 -t st --discover...
+2021-04-28 11:51:06,538 - setup_testsuite - [INFO] output is:
+
+10.245.125.145:3260,2 iqn.1992-04.com.emc:cx.apm00182204089.a1
+10.245.125.146:3260,1 iqn.1992-04.com.emc:cx.apm00182204089.b1
+2021-04-28 11:51:06,538 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:51:06,538 - component - [INFO] Get storage interface 10.245.125.145 iqn: iqn.1992-04.com.emc:cx.apm00182204089.a1.
+2021-04-28 11:51:06,538 - component - [INFO] Logging into target.
+2021-04-28 11:51:06,538 - component - [INFO] Logging into target iqn.1992-04.com.emc:cx.apm00182204089.b1 ip=10.245.125.146
+2021-04-28 11:51:06,538 - setup_testsuite - [INFO] Run command iscsiadm -m node --target iqn.1992-04.com.emc:cx.apm00182204089.b1 --portal 10.245.125.146:3260 --login...
+2021-04-28 11:51:08,941 - setup_testsuite - [INFO] output is:
+
+Logging in to [iface: default, target: iqn.1992-04.com.emc:cx.apm00182204089.b1, portal: 10.245.125.146,3260] (multiple)
+Login to [iface: default, target: iqn.1992-04.com.emc:cx.apm00182204089.b1, portal: 10.245.125.146,3260] successful.
+2021-04-28 11:51:08,941 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:51:08,941 - component - [INFO] Logging into target iqn.1992-04.com.emc:cx.apm00182204089.a1 ip=10.245.125.145
+2021-04-28 11:51:08,941 - setup_testsuite - [INFO] Run command iscsiadm -m node --target iqn.1992-04.com.emc:cx.apm00182204089.a1 --portal 10.245.125.145:3260 --login...
+2021-04-28 11:51:11,356 - setup_testsuite - [INFO] output is:
+
+Logging in to [iface: default, target: iqn.1992-04.com.emc:cx.apm00182204089.a1, portal: 10.245.125.145,3260] (multiple)
+Login to [iface: default, target: iqn.1992-04.com.emc:cx.apm00182204089.a1, portal: 10.245.125.145,3260] successful.
+2021-04-28 11:51:11,356 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:51:11,356 - component - [INFO] Check iscsi session.
+2021-04-28 11:51:11,356 - setup_testsuite - [INFO] Run command iscsiadm -m session -P 3...
+2021-04-28 11:51:13,791 - setup_testsuite - [INFO] output is:
+
+iSCSI Transport Class version 2.0-870
+version 6.2.0-873.13.el6
+Target: iqn.1992-04.com.emc:cx.apm00182204089.b1 (non-flash)
+	Current Portal: 10.245.125.146:3260,1
+	Persistent Portal: 10.245.125.146:3260,1
+		**********
+		Interface:
+		**********
+		Iface Name: default
+		Iface Transport: tcp
+		Iface Initiatorname: iqn.1994-05.com.redhat:12dc104e635d
+		Iface IPaddress: 10.245.95.207
+		Iface HWaddress: <empty>
+		Iface Netdev: <empty>
+		SID: 515
+		iSCSI Connection State: LOGGED IN
+		iSCSI Session State: LOGGED_IN
+		Internal iscsid Session State: NO CHANGE
+		*********
+		Timeouts:
+		*********
+		Recovery Timeout: 120
+		Target Reset Timeout: 30
+		LUN Reset Timeout: 30
+		Abort Timeout: 15
+		*****
+		CHAP:
+		*****
+		username: <empty>
+		password: ********
+		username_in: <empty>
+		password_in: ********
+		************************
+		Negotiated iSCSI params:
+		************************
+		HeaderDigest: CRC32C
+		DataDigest: None
+		MaxRecvDataSegmentLength: 262144
+		MaxXmitDataSegmentLength: 65536
+		FirstBurstLength: 0
+		MaxBurstLength: 262144
+		ImmediateData: No
+		InitialR2T: Yes
+		MaxOutstandingR2T: 1
+		************************
+		Attached SCSI devices:
+		************************
+		Host Number: 517	State: running
+		scsi517 Channel 00 Id 0 Lun: 0
+			Attached scsi disk sdb		State: running
+Target: iqn.1992-04.com.emc:cx.apm00182204089.a1 (non-flash)
+	Current Portal: 10.245.125.145:3260,2
+	Persistent Portal: 10.245.125.145:3260,2
+		**********
+		Interface:
+		**********
+		Iface Name: default
+		Iface Transport: tcp
+		Iface Initiatorname: iqn.1994-05.com.redhat:12dc104e635d
+		Iface IPaddress: 10.245.95.207
+		Iface HWaddress: <empty>
+		Iface Netdev: <empty>
+		SID: 516
+		iSCSI Connection State: LOGGED IN
+		iSCSI Session State: LOGGED_IN
+		Internal iscsid Session State: NO CHANGE
+		*********
+		Timeouts:
+		*********
+		Recovery Timeout: 120
+		Target Reset Timeout: 30
+		LUN Reset Timeout: 30
+		Abort Timeout: 15
+		*****
+		CHAP:
+		*****
+		username: <empty>
+		password: ********
+		username_in: <empty>
+		password_in: ********
+		************************
+		Negotiated iSCSI params:
+		************************
+		HeaderDigest: CRC32C
+		DataDigest: None
+		MaxRecvDataSegmentLength: 262144
+		MaxXmitDataSegmentLength: 65536
+		FirstBurstLength: 0
+		MaxBurstLength: 262144
+		ImmediateData: No
+		InitialR2T: Yes
+		MaxOutstandingR2T: 1
+		************************
+		Attached SCSI devices:
+		************************
+		Host Number: 518	State: running
+		scsi518 Channel 00 Id 0 Lun: 0
+			Attached scsi disk sdc		State: running
+2021-04-28 11:51:13,791 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:51:13,791 - component - [INFO] Check iscsi session for target iqn.1992-04.com.emc:cx.apm00182204089.b1 ip=10.245.125.146
+2021-04-28 11:51:13,792 - component - [INFO] Check iscsi session for target iqn.1992-04.com.emc:cx.apm00182204089.a1 ip=10.245.125.145
+2021-04-28 11:51:13,792 - setup_testsuite - [INFO] Run uemcli show Host...
+2021-04-28 11:51:17,126 - setup_testsuite - [INFO] output is:
+
+1:    ID                 = HostInitiator_15
+      Host               = Host_16
+      UID                = iqn.1994-05.com.redhat:12dc104e635d
+      Initiator type     = iscsi
+      Ports logged in    = 
+      Ignored            = no
+      Health State       = Degraded/Warning (10)
+      Health Details     = "The initiator does not have any logged in initiator paths. Check the connection between the initiator and the storage system. (https://10.245.82.189/help/webhelp/en_US/index.html?#unity_t_initiator_has_no_logged_in_initiator_path.html)"
+      CHAP users         = 
+      Source type        = OpenNative
+      Failover mode      = ALUA
+      LUNZ enabled       = yes
+      Unit serial number = Array
+2021-04-28 11:51:17,126 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:51:17,127 - component - [DEBUG] Get following Host profile:
+{'ID': 'HostInitiator_15', 'Host': 'Host_16', 'UID': 'iqn.1994-05.com.redhat:12dc104e635d', 'Initiator type': 'iscsi', 'Ports logged in': '', 'Ignored': 'no', 'Health State': 'Degraded/Warning (10)', 'Health Details': '"The initiator does not have any logged in initiator paths. Check the connection between the initiator and the storage system. (https://10.245.82.189/help/webhelp/en_US/index.html?#unity_t_initiator_has_no_logged_in_initiator_path.html)"', 'CHAP users': '', 'Source type': 'OpenNative', 'Failover mode': 'ALUA', 'LUNZ enabled': 'yes', 'Unit serial number': 'Array'}
+2021-04-28 11:51:17,127 - component - [INFO] Get host_initiator_profile:
+{'ID': 'HostInitiator_15', 'Host': 'Host_16', 'UID': 'iqn.1994-05.com.redhat:12dc104e635d', 'Initiator type': 'iscsi', 'Ports logged in': '', 'Ignored': 'no', 'Health State': 'Degraded/Warning (10)', 'Health Details': '"The initiator does not have any logged in initiator paths. Check the connection between the initiator and the storage system. (https://10.245.82.189/help/webhelp/en_US/index.html?#unity_t_initiator_has_no_logged_in_initiator_path.html)"', 'CHAP users': '', 'Source type': 'OpenNative', 'Failover mode': 'ALUA', 'LUNZ enabled': 'yes', 'Unit serial number': 'Array'}
+2021-04-28 11:51:17,127 - component - [INFO] Wait for 30 second and check again...
+2021-04-28 11:51:47,128 - setup_testsuite - [INFO] Run uemcli show Host...
+2021-04-28 11:51:50,775 - setup_testsuite - [INFO] output is:
+
+1:    ID                 = HostInitiator_15
+      Host               = Host_16
+      UID                = iqn.1994-05.com.redhat:12dc104e635d
+      Initiator type     = iscsi
+      Ports logged in    = spb_eth3,spa_eth3
+      Ignored            = no
+      Health State       = OK (5)
+      Health Details     = "The component is operating normally. No action is required."
+      CHAP users         = 
+      Source type        = OpenNative
+      Failover mode      = ALUA
+      LUNZ enabled       = yes
+      Unit serial number = Array
+2021-04-28 11:51:50,775 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:51:50,775 - component - [DEBUG] Get following Host profile:
+{'ID': 'HostInitiator_15', 'Host': 'Host_16', 'UID': 'iqn.1994-05.com.redhat:12dc104e635d', 'Initiator type': 'iscsi', 'Ports logged in': 'spb_eth3,spa_eth3', 'Ignored': 'no', 'Health State': 'OK (5)', 'Health Details': '"The component is operating normally. No action is required."', 'CHAP users': '', 'Source type': 'OpenNative', 'Failover mode': 'ALUA', 'LUNZ enabled': 'yes', 'Unit serial number': 'Array'}
+2021-04-28 11:51:50,775 - component - [INFO] Get host_initiator_profile:
+{'ID': 'HostInitiator_15', 'Host': 'Host_16', 'UID': 'iqn.1994-05.com.redhat:12dc104e635d', 'Initiator type': 'iscsi', 'Ports logged in': 'spb_eth3,spa_eth3', 'Ignored': 'no', 'Health State': 'OK (5)', 'Health Details': '"The component is operating normally. No action is required."', 'CHAP users': '', 'Source type': 'OpenNative', 'Failover mode': 'ALUA', 'LUNZ enabled': 'yes', 'Unit serial number': 'Array'}
+2021-04-28 11:51:50,775 - component - [INFO] Already got state OK in health state OK (5).
+2021-04-28 11:51:50,775 - setup_teardown_environment - [INFO] Setup test environment done. Get storage objects as following:
+TEST_SUITE_COMMON : None
+POOL_1 : <Framework.component.Pool object at 0x000002834CA76FA0>
+HOST_1 : <Framework.component.Host object at 0x000002834CA86430>
+2021-04-28 11:51:50,776 - setup_testsuite - [INFO] ============================ Start Test Case - TC_Example_System_Pool_Lun ============================
+2021-04-28 11:51:50,776 - TC_Example_System_Pool_Lun - [INFO] ### STEP_1 ### Get the system, storage pool, and datastore.
+2021-04-28 11:51:50,776 - TC_Example_System_Pool_Lun - [INFO] ### STEP_2 ### Create multiple Luns for testing.
+2021-04-28 11:51:50,777 - setup_testsuite - [INFO] ============================ End Of Test Case - TC_Example_System_Pool_Lun ============================
+
+
+2021-04-28 11:51:50,777 - setup_teardown_environment - [INFO] ### STEP_8 ### Arrange test parameters.
+2021-04-28 11:51:50,777 - setup_teardown_environment - [INFO] Teardown test environment...
+2021-04-28 11:51:50,777 - setup_teardown_environment - [INFO] ### STEP_9 ### Remove the iscsi interface.
+2021-04-28 11:51:50,777 - setup_teardown_environment - [INFO] ### STEP_10 ### Remove the pool.
+2021-04-28 11:51:50,777 - setup_testsuite - [INFO] Run uemcli show Host...
+2021-04-28 11:51:54,470 - setup_testsuite - [INFO] output is:
+
+1:    ID              = Host_16
+      Name            = test_host
+      Description     = 
+      Tenant          = 
+      Type            = host
+      Address         = test_host
+      Netmask         = 
+      OS type         = 
+      Ignored address = 
+      Management type = Manual
+      Accessible LUNs = 
+      Host LUN IDs    = 
+      Host group      = 
+      Health state    = OK (5)
+      Health details  = "The component is operating normally. No action is required."
+2021-04-28 11:51:54,471 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:51:54,471 - component - [DEBUG] Get following Host profile:
+{'ID': 'Host_16', 'Name': 'test_host', 'Description': '', 'Tenant': '', 'Type': 'host', 'Address': 'test_host', 'Netmask': '', 'OS type': '', 'Ignored address': '', 'Management type': 'Manual', 'Accessible LUNs': '', 'Host LUN IDs': '', 'Host group': '', 'Health state': 'OK (5)', 'Health details': '"The component is operating normally. No action is required."'}
+2021-04-28 11:51:54,471 - component - [INFO] Host test_host profile updated.
+2021-04-28 11:51:54,471 - setup_testsuite - [INFO] Run command iscsiadm -m session -P 3...
+2021-04-28 11:51:57,104 - setup_testsuite - [INFO] output is:
+
+iSCSI Transport Class version 2.0-870
+version 6.2.0-873.13.el6
+Target: iqn.1992-04.com.emc:cx.apm00182204089.b1 (non-flash)
+	Current Portal: 10.245.125.146:3260,1
+	Persistent Portal: 10.245.125.146:3260,1
+		**********
+		Interface:
+		**********
+		Iface Name: default
+		Iface Transport: tcp
+		Iface Initiatorname: iqn.1994-05.com.redhat:12dc104e635d
+		Iface IPaddress: 10.245.95.207
+		Iface HWaddress: <empty>
+		Iface Netdev: <empty>
+		SID: 515
+		iSCSI Connection State: LOGGED IN
+		iSCSI Session State: LOGGED_IN
+		Internal iscsid Session State: NO CHANGE
+		*********
+		Timeouts:
+		*********
+		Recovery Timeout: 120
+		Target Reset Timeout: 30
+		LUN Reset Timeout: 30
+		Abort Timeout: 15
+		*****
+		CHAP:
+		*****
+		username: <empty>
+		password: ********
+		username_in: <empty>
+		password_in: ********
+		************************
+		Negotiated iSCSI params:
+		************************
+		HeaderDigest: CRC32C
+		DataDigest: None
+		MaxRecvDataSegmentLength: 262144
+		MaxXmitDataSegmentLength: 65536
+		FirstBurstLength: 0
+		MaxBurstLength: 262144
+		ImmediateData: No
+		InitialR2T: Yes
+		MaxOutstandingR2T: 1
+		************************
+		Attached SCSI devices:
+		************************
+		Host Number: 517	State: running
+		scsi517 Channel 00 Id 0 Lun: 0
+			Attached scsi disk sdb		State: running
+Target: iqn.1992-04.com.emc:cx.apm00182204089.a1 (non-flash)
+	Current Portal: 10.245.125.145:3260,2
+	Persistent Portal: 10.245.125.145:3260,2
+		**********
+		Interface:
+		**********
+		Iface Name: default
+		Iface Transport: tcp
+		Iface Initiatorname: iqn.1994-05.com.redhat:12dc104e635d
+		Iface IPaddress: 10.245.95.207
+		Iface HWaddress: <empty>
+		Iface Netdev: <empty>
+		SID: 516
+		iSCSI Connection State: LOGGED IN
+		iSCSI Session State: LOGGED_IN
+		Internal iscsid Session State: NO CHANGE
+		*********
+		Timeouts:
+		*********
+		Recovery Timeout: 120
+		Target Reset Timeout: 30
+		LUN Reset Timeout: 30
+		Abort Timeout: 15
+		*****
+		CHAP:
+		*****
+		username: <empty>
+		password: ********
+		username_in: <empty>
+		password_in: ********
+		************************
+		Negotiated iSCSI params:
+		************************
+		HeaderDigest: CRC32C
+		DataDigest: None
+		MaxRecvDataSegmentLength: 262144
+		MaxXmitDataSegmentLength: 65536
+		FirstBurstLength: 0
+		MaxBurstLength: 262144
+		ImmediateData: No
+		InitialR2T: Yes
+		MaxOutstandingR2T: 1
+		************************
+		Attached SCSI devices:
+		************************
+		Host Number: 518	State: running
+		scsi518 Channel 00 Id 0 Lun: 0
+			Attached scsi disk sdc		State: running
+2021-04-28 11:51:57,104 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:51:57,104 - setup_testsuite - [INFO] ##############################################################################
+2021-04-28 11:51:57,104 - setup_testsuite - [INFO] #                               End Of Test Suite                            #
+2021-04-28 11:51:57,104 - setup_testsuite - [INFO] ##############################################################################

@@ -1,0 +1,12 @@
+compratio=1.33
+dedupratio=1
+dedupunit=8k
+dedupsets=50
+concatenate=no
+messagescan=no
+hd=default,shell=vdbench,
+hd=10.207.65.181,system=10.207.65.181,vdbench="/home/huangy19/vdbench50407"
+sd=default,openflags=directio,
+sd=workload_1,lun=/dev/sdd,host=10.207.65.181,threads=32,size=20g,offset=0,
+wd=workload,sd=(*),rdpct=0,seekpct=eof,xfersize=256k,
+rd=qtest,wd=(workload),elapsed=356400,warmup=0,interval=10,iorate=max,

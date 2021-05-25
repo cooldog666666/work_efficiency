@@ -1,0 +1,5 @@
+2021-05-19 03:04:55,961 - HostExecuteCommand - [DEBUG] In host 10.245.95.148, user c4dev authentication list is: ['publickey', 'password', 'keyboard-interactive'].
+2021-05-19 03:04:55,988 - HostExecuteCommand - [INFO] Host 10.245.95.148 - Run cmd: uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d 10.245.82.144 /stor/prov/vmware/vvolds show -detail.
+2021-05-19 03:04:57,122 - HostExecuteCommand - [INFO] Command uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d 10.245.82.144 /stor/prov/vmware/vvolds show -detail - output is:
+
+2021-05-19 03:04:57,122 - HostExecuteCommand - [INFO] Command uemcli -sslPolicy accept -noHeader -u admin -p Password123! -d 10.245.82.144 /stor/prov/vmware/vvolds show -detail - exit status is:0.

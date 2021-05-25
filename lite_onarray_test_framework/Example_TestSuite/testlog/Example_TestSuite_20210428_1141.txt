@@ -1,0 +1,99 @@
+2021-04-28 11:41:29,373 - setup_testsuite - [INFO] ##############################################################################
+2021-04-28 11:41:29,375 - setup_testsuite - [INFO] #                               Start Test Suite                             #
+2021-04-28 11:41:29,376 - setup_testsuite - [INFO] ##############################################################################
+2021-04-28 11:41:29,379 - setup_testsuite - [INFO] Collect test devices from file testbed/testbed_OB-H1651.cfg...
+2021-04-28 11:41:29,380 - setup_testsuite - [INFO] [IO_HOST] section - Get item host_ip : 10.245.95.207
+2021-04-28 11:41:29,380 - setup_testsuite - [INFO] [IO_HOST] section - Get item username : root
+2021-04-28 11:41:29,380 - setup_testsuite - [INFO] [IO_HOST] section - Get item password : Password123!
+2021-04-28 11:41:29,380 - setup_testsuite - [INFO] [IO_HOST] section - Get item operation_system : Linux
+2021-04-28 11:41:29,380 - setup_testsuite - [INFO] [IO_HOST] section - Get item vdbench_path : /opt/vdbench50407
+2021-04-28 11:41:29,381 - setup_testsuite - [INFO] [IO_HOST] section - Get item iox_path : /opt/IOX
+2021-04-28 11:41:29,381 - setup_testsuite - [INFO] [IO_HOST] section - Get item vjtree_path : /opt/vjtree
+2021-04-28 11:41:29,381 - setup_testsuite - [INFO] [UEMCLI_HOST] section - Get item host_ip : 10.244.103.86
+2021-04-28 11:41:29,381 - setup_testsuite - [INFO] [UEMCLI_HOST] section - Get item username : c4dev
+2021-04-28 11:41:29,381 - setup_testsuite - [INFO] [UEMCLI_HOST] section - Get item password : c4dev!
+2021-04-28 11:41:29,381 - setup_testsuite - [INFO] [UEMCLI_HOST] section - Get item operation_system : Linux
+2021-04-28 11:41:29,381 - setup_testsuite - [INFO] [STORAGE] section - Get item name : OB-H1651
+2021-04-28 11:41:29,381 - setup_testsuite - [INFO] [STORAGE] section - Get item spa_ip : 10.245.82.185
+2021-04-28 11:41:29,382 - setup_testsuite - [INFO] [STORAGE] section - Get item spb_ip : 10.245.82.186
+2021-04-28 11:41:29,382 - setup_testsuite - [INFO] [STORAGE] section - Get item mgmt_ip : 10.245.82.189
+2021-04-28 11:41:29,382 - setup_testsuite - [INFO] [STORAGE] section - Get item username : root
+2021-04-28 11:41:29,382 - setup_testsuite - [INFO] [STORAGE] section - Get item port_1 : spa_eth3
+2021-04-28 11:41:29,382 - setup_testsuite - [INFO] [STORAGE] section - Get item port_2 : spb_eth3
+2021-04-28 11:41:29,382 - setup_testsuite - [INFO] [STORAGE] section - Get item ioip_1 : 10.245.125.145
+2021-04-28 11:41:29,382 - setup_testsuite - [INFO] [STORAGE] section - Get item ioip_2 : 10.245.125.146
+2021-04-28 11:41:29,382 - setup_testsuite - [INFO] [STORAGE] section - Get item gateway : 10.245.125.1
+2021-04-28 11:41:29,382 - setup_testsuite - [INFO] [STORAGE] section - Get item netmask : 255.255.255.0
+2021-04-28 11:41:29,383 - setup_testsuite - [INFO] Collect test parameters from file testparam/testparam_Block.cfg...
+2021-04-28 11:41:29,383 - setup_testsuite - [INFO] Get following sections from testparam/testparam_Block.cfg:
+['TEST_SUITE_COMMON', 'POOL_1', 'HOST_1']
+2021-04-28 11:41:29,383 - setup_testsuite - [INFO] ====== Find section [TEST_SUITE_COMMON].
+2021-04-28 11:41:29,384 - setup_testsuite - [INFO] [TEST_SUITE_COMMON] section - Get option logfile : Example_TestSuite
+2021-04-28 11:41:29,384 - setup_testsuite - [INFO] Section [TEST_SUITE_COMMON] parameters:
+{'logfile': 'Example_TestSuite'}
+2021-04-28 11:41:29,384 - setup_testsuite - [INFO] ====== Find section [POOL_1].
+2021-04-28 11:41:29,384 - setup_testsuite - [INFO] [POOL_1] section - Get option name : test_pool
+2021-04-28 11:41:29,384 - setup_testsuite - [INFO] [POOL_1] section - Get option profile : tprofile_12,tprofile_12
+2021-04-28 11:41:29,384 - setup_testsuite - [INFO] [POOL_1] section - Get option dg : dg_2,dg_27
+2021-04-28 11:41:29,385 - setup_testsuite - [INFO] [POOL_1] section - Get option drive_number : 2,2
+2021-04-28 11:41:29,385 - setup_testsuite - [INFO] [POOL_1] section - Get option type : traditional
+2021-04-28 11:41:29,385 - setup_testsuite - [INFO] Section [POOL_1] parameters:
+{'name': 'test_pool', 'profile': 'tprofile_12,tprofile_12', 'dg': 'dg_2,dg_27', 'drive_number': '2,2', 'type': 'traditional'}
+2021-04-28 11:41:29,385 - setup_testsuite - [INFO] ====== Find section [HOST_1].
+2021-04-28 11:41:29,386 - setup_testsuite - [INFO] [HOST_1] section - Get option name : test_host
+2021-04-28 11:41:29,386 - setup_testsuite - [INFO] [HOST_1] section - Get option ip : 10.245.95.207
+2021-04-28 11:41:29,386 - setup_testsuite - [INFO] [HOST_1] section - Get option username : root
+2021-04-28 11:41:29,386 - setup_testsuite - [INFO] [HOST_1] section - Get option password : Password123!
+2021-04-28 11:41:29,386 - setup_testsuite - [INFO] Section [HOST_1] parameters:
+{'name': 'test_host', 'ip': '10.245.95.207', 'username': 'root', 'password': 'Password123!'}
+2021-04-28 11:41:29,386 - setup_testsuite - [INFO] ============================ Start Test Case - TC_Example_System_Pool_Lun ============================
+2021-04-28 11:41:29,386 - TC_Example_System_Pool_Lun - [INFO] ### STEP_1 ### Get the system, storage pool, and datastore.
+2021-04-28 11:41:29,386 - setup_testsuite - [INFO] Run uemcli show Pool...
+2021-04-28 11:41:32,951 - setup_testsuite - [INFO] output is:
+
+1:    ID                                                = pool_19
+      Type                                              = Traditional
+      Name                                              = test_pool
+      Description                                       = 
+      Total space                                       = 983010639872 (915.5G)
+      Current allocation                                = 0
+      Preallocated                                      = 0
+      Remaining space                                   = 983010639872 (915.5G)
+      Subscription                                      = 0
+      Flash percent                                     = 100%
+      Subscription percent                              = 0%
+      Alert threshold                                   = 70%
+      Drives                                            = 2 x 200.0G SAS Flash 2; 2 x 800.0G SAS Flash 3
+      Number of drives                                  = 4
+      RAID level                                        = 10
+      Stripe length                                     = 2
+      Rebalancing                                       = no
+      Rebalancing progress                              = 
+      Health state                                      = OK (5)
+      Health details                                    = "The component is operating normally. No action is required."
+      FAST Cache enabled                                = no
+      Protection size used                              = 0
+      Non-base size used                                = 0
+      Auto-delete state                                 = Idle
+      Auto-delete paused                                = no
+      Auto-delete pool full threshold enabled           = yes
+      Auto-delete pool full high water mark             = 95%
+      Auto-delete pool full low water mark              = 85%
+      Auto-delete snapshot space used threshold enabled = no
+      Auto-delete snapshot space used high water mark   = 25%
+      Auto-delete snapshot space used low water mark    = 20%
+      Data Reduction space saved                        = 0
+      Data Reduction Percent                            = 0%
+      Data Reduction Ratio                              = 1.0:1
+      All flash pool                                    = yes
+2021-04-28 11:41:32,951 - setup_testsuite - [INFO] exit status is:0.
+2021-04-28 11:41:32,951 - component - [DEBUG] Get following Pool profile:
+{'ID': 'pool_19', 'Type': 'Traditional', 'Name': 'test_pool', 'Description': '', 'Total space': '983010639872 (915.5G)', 'Current allocation': '0', 'Preallocated': '0', 'Remaining space': '983010639872 (915.5G)', 'Subscription': '0', 'Flash percent': '100%', 'Subscription percent': '0%', 'Alert threshold': '70%', 'Drives': '2 x 200.0G SAS Flash 2; 2 x 800.0G SAS Flash 3', 'Number of drives': '4', 'RAID level': '10', 'Stripe length': '2', 'Rebalancing': 'no', 'Rebalancing progress': '', 'Health state': 'OK (5)', 'Health details': '"The component is operating normally. No action is required."', 'FAST Cache enabled': 'no', 'Protection size used': '0', 'Non-base size used': '0', 'Auto-delete state': 'Idle', 'Auto-delete paused': 'no', 'Auto-delete pool full threshold enabled': 'yes', 'Auto-delete pool full high water mark': '95%', 'Auto-delete pool full low water mark': '85%', 'Auto-delete snapshot space used threshold enabled': 'no', 'Auto-delete snapshot space used high water mark': '25%', 'Auto-delete snapshot space used low water mark': '20%', 'Data Reduction space saved': '0', 'Data Reduction Percent': '0%', 'Data Reduction Ratio': '1.0:1', 'All flash pool': 'yes'}
+2021-04-28 11:41:32,952 - component - [INFO] Pool test_pool profile updated.
+2021-04-28 11:41:32,952 - TC_Example_System_Pool_Lun - [INFO] ### STEP_2 ### Create multiple Luns for testing.
+2021-04-28 11:41:32,952 - setup_testsuite - [INFO] ============================ End Of Test Case - TC_Example_System_Pool_Lun ============================
+
+
+2021-04-28 11:41:32,952 - setup_testsuite - [INFO] ##############################################################################
+2021-04-28 11:41:32,953 - setup_testsuite - [INFO] #                               End Of Test Suite                            #
+2021-04-28 11:41:32,953 - setup_testsuite - [INFO] ##############################################################################
